@@ -4,7 +4,9 @@
   （YouTube API の規約で、保存した統計は30日以内に取り直す）。
 - 基準（config/rules.toml の [buzz]）から外れたもの・data/exclude.txt の動画は落とす。
 
-使い方: python3 scripts/collect.py [--dry-run]
+使い方: python3 scripts/collect.py [--dry-run] [--rejudge]
+  --rejudge: 検索をせず、前回の候補（data/candidates.json）の詳細だけ取り直して判定し直す（約20ユニット）。
+             ルールを直した時に使う。
 API キー: 環境変数 YOUTUBE_API_KEY があればヘッダー X-Goog-Api-Key に入れる。
 Claude Code のクラウド環境では、ネットワークシークレットからプロキシが入れるので不要。
 """
@@ -90,7 +92,10 @@ def main():
     rules = convini.Rules()
     sources = convini.load_toml("sources.toml")
     current = convini.load_json(convini.VIDEOS, {"videos": []})["videos"]
-    new_ids, u1 = search(sources, rules.buzz["days"])
+    if "--rejudge" in sys.argv:
+        new_ids, u1 = convini.load_json(convini.CANDIDATES, []), 0
+    else:
+        new_ids, u1 = search(sources, rules.buzz["days"])
     ids = list(dict.fromkeys(new_ids + [v["id"] for v in current]))
     found, u2 = details(ids)
     keep, dropped = build(found, rules, convini.load_exclude())
@@ -104,6 +109,7 @@ def main():
     print(json.dumps(summary, ensure_ascii=False, indent=1))
     if not dry:
         convini.save_json(convini.VIDEOS, {"summary": summary, "videos": keep})
+        convini.save_json(convini.CANDIDATES, new_ids)
 
 
 if __name__ == "__main__":

@@ -8,6 +8,7 @@ import tomllib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config"
 VIDEOS = ROOT / "data/videos.json"     # ページに載せる動画（毎日入れ替わる）
+CANDIDATES = ROOT / "data/candidates.json"  # 最後の検索で見つけた動画の ID（検索せずに判定し直す時に使う）
 EXCLUDE = ROOT / "data/exclude.txt"    # 人が外したい動画の ID（1行に1つ）
 
 UNSORTED = "unsorted"
@@ -122,14 +123,18 @@ class Rules:
         return bool(KANA.search(title)) or self.japan.hit(title + "\n" + desc)
 
     def category(self, title, desc=""):
-        for text in (title, desc):
-            hits = [k for k, _, w in self.categories if w.hit(text)]
-            if len(hits) == 1:
-                return hits[0]
-            if len(hits) > 1:
-                return MIXED
+        """タイトルで1つ当たればそれ、2つ以上なら「いろいろ」。タイトルで当たらなければ、
+        概要欄で1つだけ当たる時だけそれにする（概要欄で2つ以上は、関係ない動画が多いので未分類）。"""
+        hits = [k for k, _, w in self.categories if w.hit(title)]
+        if len(hits) == 1:
+            return hits[0]
+        if len(hits) > 1:
+            return MIXED
         if self.mixed.hit(title):
             return MIXED
+        hits = [k for k, _, w in self.categories if w.hit(desc)]
+        if len(hits) == 1:
+            return hits[0]
         return UNSORTED
 
     def judge(self, v):
