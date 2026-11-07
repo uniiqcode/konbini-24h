@@ -1,0 +1,121 @@
+# 載せる基準と、キーワードによる判定・分類。AI は使わない。
+# 判定はタイトルと概要欄の文字で行う。大文字・小文字は区別しない。
+
+[buzz]
+days = 90             # 投稿から何日以内か
+min_views = 100000    # 再生数がいくつ以上か
+max_seconds = 180     # ショートとみなす長さ（今の YouTube ショートの上限）
+
+# ---- 店 ----
+# どれか1社だけ当たればその店。2社以上、またはどの店名もなく「コンビニ」だけなら「全店」。
+[stores.seven]
+words = ["セブンイレブン", "セブン-イレブン", "セブン‐イレブン", "セブン", "7-eleven", "7eleven", "7 eleven",
+         "seven eleven", "seven-eleven", "7-11", "7/11", "711", "세븐일레븐", "세븐", "小七", "เซเว่น"]
+
+[stores.familymart]
+words = ["ファミリーマート", "ファミマ", "ファミチキ", "familymart", "family mart", "famima", "famichiki",
+         "패밀리마트", "패마", "全家", "แฟมิลี่มาร์ท"]
+
+[stores.lawson]
+words = ["ローソン", "からあげクン", "lawson", "로손", "羅森", "罗森", "ลอว์สัน"]
+
+[stores.any]
+# 店名がなくても「日本のコンビニ」の動画なら全店にする
+words = ["コンビニ", "konbini", "conbini", "combini", "convenience store", "편의점", "便利商店", "便利店",
+         "超商", "ร้านสะดวกซื้อ", "tiện lợi", "minimarket", "supérette", "tienda de conveniencia",
+         "loja de conveniência", "kombini"]
+
+# ---- 日本の動画か ----
+# 7-Eleven・FamilyMart は韓国・台湾・タイにもあるので、日本の話だと分かるものだけ載せる。
+# タイトルか概要欄に下の言葉がある、またはタイトルにかなが入っていれば日本の動画とみなす。
+[japan]
+words = ["japan", "japanese", "japon", "japón", "japão", "jepang", "giappone", "nhật", "日本", "일본",
+         "ญี่ปุ่น", "tokyo", "osaka", "kyoto", "東京", "大阪", "京都", "도쿄", "오사카", "konbini", "conbini"]
+
+# ---- 載せないもの ----
+[exclude]
+# ほかの店・ほかの国のコンビニの話（タイトルに当たれば外す。3社の名前が一緒にあれば外さない）
+other_stores = ["gs25", "cu편의점", "이마트24", "emart24", "ministop", "ミニストップ", "セイコーマート", "seicomart",
+                "デイリーヤマザキ", "ok mart", "萊爾富", "hi-life", "全聯"]
+# コンビニと関係のない動画によく出る言葉
+words = ["robbery", "강도", "強盗", "prank", "몰카", "ドッキリ", "hair", "capelli", "taiwan", "台灣", "台湾", "한국 편의점", "雀巢", "racially", "attacked", "firstpost"]
+
+# ---- 分類 ----
+# 上から順に見る。タイトルで1つだけ当たればそれ。2つ以上当たれば「いろいろ」。
+# タイトルで当たらなければ概要欄で同じことをする。それでもなければ「未分類」（人が確かめる）。
+# group = food（食品）/ other（食品以外）
+
+[[categories]]
+key = "rice"
+group = "food"
+words = ["おにぎり", "弁当", "丼", "パスタ", "ラーメン", "うどん", "そば", "焼きそば", "カップ麺", "カップラーメン", "麺",
+         "onigiri", "rice ball", "bento", "ramen", "noodle", "udon", "soba", "pasta", "cup noodle", "lunch box",
+         "삼각김밥", "도시락", "라면", "컵라면", "우동", "飯糰", "饭团", "便當", "便当", "泡麵", "泡面", "拉麵", "拉面",
+         "cơm nắm", "mì", "ข้าวปั้น", "ราเมน", "炒飯", "チャーハン", "ビリヤニ", "スパゲッティ", "スパゲティ", "ナポリタン", "spaghetti", "fried rice", "김밥", "kimbap", "낫또", "炒饭", "義大利麵"]
+
+[[categories]]
+key = "bread"
+group = "food"
+words = ["サンド", "パン", "たまごサンド", "ホットドッグ", "sandwich", "sando", "egg sando", "bread", "bun",
+         "샌드위치", "에그샌드", "빵", "三明治", "麵包", "面包", "bánh mì", "แซนด์วิช", "ขนมปัง", "pain", "sándwich", "ピザ", "pizza", "피자", "披薩", "クロワッサン", "croissant"]
+
+[[categories]]
+key = "hotsnack"
+group = "food"
+words = ["ファミチキ", "からあげクン", "からあげ", "唐揚げ", "揚げ", "チキン", "コロッケ", "おでん", "肉まん", "ナゲット", "ホットスナック",
+         "fried chicken", "karaage", "famichiki", "chicken", "oden", "nikuman", "croquette", "hot snack", "nugget",
+         "치킨", "가라아게", "오뎅", "어묵", "고로케", "炸雞", "炸鸡", "唐揚", "關東煮", "关东煮", "肉包",
+         "gà rán", "ไก่ทอด", "โอเด้ง"]
+
+[[categories]]
+key = "sweets"
+group = "food"
+words = ["スイーツ", "デザート", "アイス", "プリン", "ケーキ", "シュークリーム", "パフェ", "ハーゲンダッツ", "ガトーショコラ", "大福",
+         "sweets", "dessert", "ice cream", "pudding", "cake", "cream puff", "mochi", "parfait", "häagen", "haagen", "matcha",
+         "디저트", "아이스크림", "푸딩", "케이크", "모찌", "甜點", "甜点", "冰淇淋", "布丁", "蛋糕", "雪糕",
+         "kem", "bánh ngọt", "ไอศกรีม", "ขนมหวาน", "glace", "helado", "sorvete", "dulces", "doce", "モンブラン", "栗", "芋", "もちもち"]
+
+[[categories]]
+key = "snack"
+group = "food"
+words = ["お菓子", "グミ", "チョコ", "ポテチ", "スナック菓子", "じゃがりこ", "candy", "gummy", "gummies", "chocolate", "chips", "snacks",
+         "kitkat", "kit kat", "과자", "젤리", "초콜릿", "零食", "軟糖", "软糖", "巧克力", "餅乾", "饼干", "kẹo", "ขนม", "snack", "スナック"]
+
+[[categories]]
+key = "drink"
+group = "food"
+words = ["ドリンク", "飲み物", "コーヒー", "お茶", "ジュース", "スムージー", "ビール", "お酒", "酎ハイ", "ストロングゼロ", "ハイボール", "日本酒",
+         "drink", "coffee", "tea", "juice", "smoothie", "beer", "sake", "highball", "chuhai", "alcohol", "strong zero",
+         "음료", "커피", "맥주", "하이볼", "飲料", "饮料", "咖啡", "啤酒", "果汁", "đồ uống", "cà phê", "bia", "เครื่องดื่ม", "กาแฟ", "เบียร์"]
+
+[[categories]]
+key = "service"
+group = "other"
+words = ["atm", "トイレ", "toilet", "restroom", "コピー機", "マルチコピー", "印刷", "print", "宅配", "公共料金", "ticket", "チケット",
+         "wifi", "wi-fi", "店員", "staff", "clerk", "接客", "레지", "화장실", "직원", "프린트", "廁所", "厕所", "店員",
+         "nhân viên", "nhà vệ sinh", "ห้องน้ำ", "พนักงาน", "worker", "employee", "알바", "バイト", "アルバイト", "cashier", "store policy", "policy"]
+
+[[categories]]
+key = "goods"
+group = "other"
+words = ["コスメ", "化粧品", "日用品", "下着", "靴下", "服", "傘", "outfit", "clothes", "socks", "underwear", "cosmetics", "makeup",
+         "skincare", "umbrella", "charger", "コラボ", "グッズ", "一番くじ", "collab", "merch", "화장품", "양말", "옷", "콜라보", "굿즈",
+         "化妝品", "化妆品", "襪子", "联名", "聯名", "mỹ phẩm", "เครื่องสำอาง", "lady gaga"]
+
+[[categories]]
+key = "culture"
+group = "other"
+words = ["vs", "比較", "違い", "マナー", "あるある", "驚", "海外", "外国人", "difference", "compare", "comparison", "weird", "manners",
+         "culture", "design", "tips", "hack", "secret", "비교", "차이", "매너", "외국인", "꿀팁", "比較", "比较", "差別", "差别",
+         "thiết kế", "khác biệt", "khác", "เปรียบเทียบ", "never do", "things japanese", "알아두면", "상황", "pov", "多すぎ", "penemuan", "perpisahan"]
+
+# 1つの商品に絞らず、いろいろ紹介する動画（どの分類にも当たらない時に使う）
+[mixed]
+key = "mixed"
+group = "food"
+words = ["everything", "only eating", "eating only", "24 hours", "24h", "all day", "haul", "must try", "must-try", "best", "top",
+         "ranking", "what i ate", "breakfast", "dinner", "food", "全部", "ランキング", "おすすめ", "爆買い", "購入品", "朝ごはん", "晩ごはん",
+         "추천", "꿀조합", "먹방", "best", "必買", "必吃", "推薦", "推荐", "món", "đồ ăn", "อาหาร", "manger", "comida", "comer",
+         "新商品", "新作", "神商品", "商品", "選", "食べ比べ", "レビュー", "正直な感想", "食べてみた", "食べた", "爆食", "ドカ食い", "飯", "メニュー", "フェア", "増量",
+         "review", "mukbang", "meal", "tried", "trying", "desayuno", "desayunando", "refeição", "makan",
+         "먹어", "먹어보기", "조합", "템", "베스트셀러", "新品", "開箱", "开箱"]
