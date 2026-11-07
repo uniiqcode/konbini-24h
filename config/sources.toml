@@ -1,0 +1,45 @@
+# 毎日の自動収集で見に行くところ。人が足したり消したりしてよい。
+
+[youtube]
+# 検索語 × 言語。1回の検索で無料枠（1日10,000ユニット）のうち100を使う。
+# 「再生数の多い順」で1ページ（50件）ずつ取る。下の24語なら 2,400 + 詳細の取得（数十）。
+# 載っている動画の再生数の取り直しは videos.list（50本で1ユニット）なので軽い。
+order = "viewCount"
+max_results = 50
+
+# relevanceLanguage = 検索語の言語。結果をその言語に寄せる（絞り込みではない）
+[[youtube.queries]]
+lang = "ja"
+q = ["セブンイレブン 新商品", "ファミマ 新商品", "ローソン 新商品", "コンビニ 新商品"]
+
+[[youtube.queries]]
+lang = "en"
+q = ["7-Eleven Japan", "FamilyMart Japan", "Lawson Japan", "Japanese konbini", "Japan convenience store"]
+
+[[youtube.queries]]
+lang = "ko"
+q = ["일본 세븐일레븐", "일본 패밀리마트", "일본 로손", "일본 편의점"]
+
+[[youtube.queries]]
+lang = "zh-Hant"
+q = ["日本 7-11", "日本 全家", "日本 LAWSON", "日本超商"]
+
+[[youtube.queries]]
+lang = "vi"
+q = ["cửa hàng tiện lợi Nhật Bản", "7-Eleven Nhật"]
+
+[[youtube.queries]]
+lang = "th"
+q = ["เซเว่น ญี่ปุ่น"]
+
+[[youtube.queries]]
+lang = "id"
+q = ["minimarket Jepang"]
+
+[[youtube.queries]]
+lang = "fr"
+q = ["konbini Japon"]
+
+[[youtube.queries]]
+lang = "es"
+q = ["konbini Japón"]
