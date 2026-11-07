@@ -94,6 +94,19 @@ class Rules:
         self.mixed = Words(cfg["mixed"]["words"])
         self.groups = {c["key"]: c["group"] for c in cfg["categories"]}
         self.groups[MIXED] = cfg["mixed"]["group"]
+        tags = load_toml("tags.toml")
+        self.tag_items = [(t["key"], Words(t["words"])) for t in tags["items"]]
+        self.tag_skip = {t["key"]: set(t.get("skip_if", [])) for t in tags["items"] + tags["formats"]}
+        self.tag_formats = [(t["key"], Words(t["words"])) for t in tags["formats"]]
+        self.official = set(cfg["exclude"].get("official_channels", []))
+        self.per_channel = cfg["buzz"].get("per_channel", 0)
+
+    def tags(self, title):
+        """タイトルから、もの2つ・内容1つまでのタグのキーを返す（ページで視聴者の言語のラベルにする）。"""
+        hit = [k for k, w in self.tag_items if w.hit(title)]
+        items = [k for k in hit if not (self.tag_skip[k] & set(hit))][:2]
+        formats = [k for k, w in self.tag_formats if w.hit(title)][:1]
+        return items + formats
 
     def store(self, title, desc=""):
         """seven / familymart / lawson / all。コンビニの動画でなければ None。
@@ -139,8 +152,13 @@ class Rules:
             return "ほかの店"
         if self.exclude.hit(title):
             return "除外の言葉"
+        if v.get("channel") in self.official:
+            return "公式チャンネル"
         cat = self.category(title, desc)
-        return dict(store=store, category=cat, group=self.groups.get(cat, ""), lang=detect_lang(title, v.get("audio")))
+        group = self.groups.get(cat, "")
+        if self.buzz.get("food_only") and group != "food":
+            return "食品ではない" if group else "未分類"
+        return dict(store=store, category=cat, group=group, lang=detect_lang(title, v.get("audio")), tags=self.tags(title))
 
 
 def parse_duration(iso):

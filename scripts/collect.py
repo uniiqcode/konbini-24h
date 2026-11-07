@@ -72,6 +72,16 @@ def build(found, rules, exclude):
         keep.append(dict(id=v["id"], title=v["title"], channel=v["channel"], published=v["published"][:10],
                          views=v["views"], seconds=v["seconds"], **r))
     keep.sort(key=lambda x: -x["views"])
+    cap = rules.per_channel
+    if cap:
+        n, capped = collections.Counter(), []
+        for v in keep:
+            if n[v["channel"]] < cap:
+                capped.append(v)
+                n[v["channel"]] += 1
+            else:
+                dropped["同じチャンネルの上限"] += 1
+        keep = capped
     return keep, dropped
 
 

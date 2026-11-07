@@ -1,0 +1,214 @@
+# 動画の中身を、視聴者の言語の「単語」で紹介するためのタグ。
+# 動画タイトルは翻訳しない（元の言語のまま出す）。タイトル（ハッシュタグを含む）に words のどれかがあれば、
+# そのタグを label の言語で出す。AI・翻訳の API は使わない。
+# 1本に出すのは、items（もの）から2つ・formats（内容）から1つまで。上にあるものほど先に出す。
+# skip_if: そこに書いたタグも当たった時は、このタグを出さない。
+# label は ja（日本語）・ko（韓国語）・zh（繁体字）・en（英語）。
+
+# ---- もの ----
+[[items]]
+key = "ramen"
+words = ["ラーメン", "らーめん", "らぁ麺", "まぜ麺", "ramen", "라멘", "라면", "拉麵", "拉面"]
+label = { ja = "ラーメン", ko = "라멘", zh = "拉麵", en = "Ramen" }
+
+[[items]]
+key = "cupnoodle"
+words = ["カップ麺", "カップラーメン", "cup noodle", "cup ramen", "컵라면", "泡麵", "泡面"]
+label = { ja = "カップ麺", ko = "컵라면", zh = "泡麵", en = "Cup noodles" }
+
+[[items]]
+key = "udon_soba"
+words = ["うどん", "そば", "蕎麦", "udon", "soba", "우동", "소바", "烏龍麵"]
+label = { ja = "うどん・そば", ko = "우동·소바", zh = "烏龍麵・蕎麥麵", en = "Udon & soba" }
+
+[[items]]
+key = "pasta"
+words = ["パスタ", "スパゲッティ", "スパゲティ", "ナポリタン", "pasta", "spaghetti", "파스타", "스파게티", "義大利麵"]
+label = { ja = "パスタ", ko = "파스타", zh = "義大利麵", en = "Pasta" }
+
+[[items]]
+key = "onigiri"
+words = ["おにぎり", "おむすび", "onigiri", "rice ball", "삼각김밥", "주먹밥", "飯糰", "饭团"]
+label = { ja = "おにぎり", ko = "삼각김밥", zh = "飯糰", en = "Onigiri" }
+
+[[items]]
+key = "bento"
+words = ["弁当", "べんとう", "bento", "lunch box", "도시락", "便當", "便当"]
+label = { ja = "弁当", ko = "도시락", zh = "便當", en = "Bento" }
+
+[[items]]
+key = "friedrice"
+words = ["炒飯", "チャーハン", "fried rice", "볶음밥", "炒饭"]
+label = { ja = "チャーハン", ko = "볶음밥", zh = "炒飯", en = "Fried rice" }
+
+[[items]]
+key = "sandwich"
+words = ["サンド", "sandwich", "sando", "샌드위치", "三明治"]
+label = { ja = "サンドイッチ", ko = "샌드위치", zh = "三明治", en = "Sandwich" }
+
+[[items]]
+key = "bread"
+words = ["菓子パン", "食パン", "チョコパン", "メロンパン", "カレーパン", "パンアレンジ", "パン屋", "クロワッサン", "bread", "croissant", "빵", "麵包", "面包"]  # 「パン」だけだと「ジャパン」に当たる
+label = { ja = "パン", ko = "빵", zh = "麵包", en = "Bread" }
+
+[[items]]
+key = "pizza"
+words = ["ピザ", "pizza", "피자", "披薩"]
+label = { ja = "ピザ", ko = "피자", zh = "披薩", en = "Pizza" }
+
+[[items]]
+key = "karaage"
+words = ["からあげ", "唐揚げ", "から揚げ", "ファミチキ", "チキン", "karaage", "fried chicken", "famichiki", "가라아게", "치킨", "炸雞", "炸鸡"]
+label = { ja = "からあげ・チキン", ko = "가라아게·치킨", zh = "炸雞", en = "Fried chicken" }
+
+[[items]]
+key = "sausage"
+words = ["ソーセージ", "sausage", "소시지", "香腸"]
+label = { ja = "ソーセージ", ko = "소시지", zh = "香腸", en = "Sausage" }
+
+[[items]]
+key = "salmon"
+words = ["鮭", "サーモン", "salmon", "연어", "鮭魚"]
+label = { ja = "鮭", ko = "연어", zh = "鮭魚", en = "Salmon" }
+
+[[items]]
+key = "pork"
+words = ["豚", "ポーク", "とん汁", "pork", "돼지", "豬肉", "猪肉"]
+label = { ja = "豚肉", ko = "돼지고기", zh = "豬肉", en = "Pork" }
+
+[[items]]
+key = "corn"
+words = ["とうもろこし", "コーン", "corn", "옥수수", "玉米"]
+label = { ja = "とうもろこし", ko = "옥수수", zh = "玉米", en = "Corn" }
+
+[[items]]
+key = "crab"
+words = ["蟹", "カニ", "かに", "crab", "螃蟹"]  # 韓国語の「게」は1文字でほかの言葉に当たるので入れない
+label = { ja = "カニ", ko = "게", zh = "螃蟹", en = "Crab" }
+
+[[items]]
+key = "icecream"
+words = ["アイス", "ハーゲンダッツ", "ice cream", "häagen", "haagen", "아이스크림", "冰淇淋", "雪糕"]
+label = { ja = "アイス", ko = "아이스크림", zh = "冰淇淋", en = "Ice cream" }
+
+[[items]]
+key = "chocolate"
+words = ["チョコ", "chocolate", "초콜릿", "초코", "巧克力"]
+label = { ja = "チョコ", ko = "초콜릿", zh = "巧克力", en = "Chocolate" }
+
+[[items]]
+key = "pudding"
+words = ["プリン", "pudding", "푸딩", "布丁"]
+label = { ja = "プリン", ko = "푸딩", zh = "布丁", en = "Pudding" }
+
+[[items]]
+key = "cake"
+words = ["ケーキ", "チーズケーキ", "cake", "cheesecake", "케이크", "치즈케이크", "蛋糕"]
+label = { ja = "ケーキ", ko = "케이크", zh = "蛋糕", en = "Cake" }
+
+[[items]]
+key = "matcha"
+words = ["抹茶", "matcha", "말차", "녹차"]
+label = { ja = "抹茶", ko = "말차", zh = "抹茶", en = "Matcha" }
+
+[[items]]
+key = "chestnut"
+words = ["栗", "モンブラン", "chestnut", "mont blanc", "몽블랑", "栗子"]  # 韓国語の「밤」は「夜」にも当たるので入れない
+label = { ja = "栗・モンブラン", ko = "밤·몽블랑", zh = "栗子", en = "Chestnut" }
+
+[[items]]
+key = "sweetpotato"
+words = ["芋", "さつまいも", "sweet potato", "고구마", "地瓜"]
+label = { ja = "さつまいも", ko = "고구마", zh = "地瓜", en = "Sweet potato" }
+
+[[items]]
+key = "marshmallow"
+words = ["マシュマロ", "marshmallow", "마시멜로", "棉花糖"]
+label = { ja = "マシュマロ", ko = "마시멜로", zh = "棉花糖", en = "Marshmallow" }
+
+[[items]]
+key = "candy"
+words = ["お菓子", "グミ", "梅", "きのこの山", "たけのこの里", "candy", "gummy", "snack", "kinoko", "takenoko", "과자", "젤리", "零食", "軟糖"]
+label = { ja = "お菓子", ko = "과자", zh = "零食", en = "Snacks" }
+
+[[items]]
+key = "spicy"
+words = ["激辛", "辛", "ブルダック", "spicy", "buldak", "불닭", "매운", "辣"]
+label = { ja = "辛いもの", ko = "매운 음식", zh = "辣味", en = "Spicy" }
+
+[[items]]
+key = "beer"
+words = ["ビール", "お酒", "ハイボール", "beer", "sake", "highball", "맥주", "하이볼", "啤酒"]
+label = { ja = "ビール・お酒", ko = "맥주·술", zh = "啤酒・酒", en = "Beer & sake" }
+
+[[items]]
+key = "breakfast"
+words = ["朝食", "朝ごはん", "朝ビール", "breakfast", "desayuno", "아침", "早餐"]
+label = { ja = "朝ごはん", ko = "아침 식사", zh = "早餐", en = "Breakfast" }
+
+[[items]]
+key = "curry"
+words = ["カレー", "ビリヤニ", "curry", "biryani", "카레", "咖哩"]
+label = { ja = "カレー", ko = "카레", zh = "咖哩", en = "Curry" }
+
+[[items]]
+key = "noodles"
+words = ["麺", "noodle", "면", "麵"]
+skip_if = ["ramen", "cupnoodle", "udon_soba", "pasta"]   # もっと詳しいタグがあれば出さない
+label = { ja = "麺", ko = "면", zh = "麵", en = "Noodles" }
+
+# ---- 内容 ----
+[[formats]]
+key = "ranking"
+words = ["ランキング", "選", "1등", "베스트", "top", "best", "ranking", "排行", "第一名"]
+label = { ja = "ランキング", ko = "랭킹", zh = "排行榜", en = "Ranking" }
+
+[[formats]]
+key = "compare"
+words = ["食べ比べ", "比較", " vs ", "vs", "비교", "比較", "比较"]
+label = { ja = "食べ比べ", ko = "비교", zh = "比較", en = "Comparison" }
+
+[[formats]]
+key = "bigeat"
+words = ["大食い", "爆食", "ドカ食い", "全部食べ", "全種類", "早食い", "mukbang", "モッパン", "먹방", "大胃王", "only eating", "massive"]
+label = { ja = "大食い", ko = "먹방", zh = "大胃王", en = "Mukbang" }
+
+[[formats]]
+key = "challenge"
+words = ["チャレンジ", "タイムアタック", "挑戦", "challenge", "can you finish", "챌린지", "挑戰"]
+label = { ja = "チャレンジ", ko = "챌린지", zh = "挑戰", en = "Challenge" }
+
+[[formats]]
+key = "reaction"
+words = ["英国人", "アメリカ人", "外国人", "海外の反応", "foreigner", "외국인", "外國人"]
+label = { ja = "外国人の反応", ko = "외국인 반응", zh = "外國人反應", en = "Foreigners react" }
+
+[[formats]]
+key = "controversy"
+words = ["炎上", "ざわつ", "話題", "バズ", "viral", "난리", "화제", "爆紅", "話題"]
+label = { ja = "話題・炎上", ko = "화제", zh = "話題", en = "Viral & talked-about" }
+
+[[formats]]
+key = "collab"
+words = ["監修", "コラボ", "collab", "콜라보", "聯名", "联名"]
+label = { ja = "コラボ・監修", ko = "콜라보", zh = "聯名", en = "Collab" }
+
+[[formats]]
+key = "cheap"
+words = ["円以下", "297円", "下級", "貧乏", "가난", "cheap", "budget", "便宜"]
+label = { ja = "安い", ko = "저렴", zh = "便宜", en = "Cheap eats" }
+
+[[formats]]
+key = "recipe"
+words = ["アレンジ", "再現", "レシピ", "作ってみた", "作りました", "hack", "recipe", "레시피", "꿀조합", "조합", "食譜"]
+label = { ja = "アレンジ", ko = "꿀조합", zh = "創意吃法", en = "Hacks & recipes" }
+
+[[formats]]
+key = "review"
+words = ["レビュー", "正直な感想", "食べてみた", "ジャッジ", "review", "tried", "trying", "리뷰", "먹어", "試吃", "评测"]
+label = { ja = "レビュー", ko = "리뷰", zh = "試吃", en = "Review" }
+
+[[formats]]
+key = "new"
+words = ["新商品", "新作", "新発売", "新メニュー", "発売", "new", "신상", "新品", "新上市"]
+label = { ja = "新商品", ko = "신상품", zh = "新品", en = "New item" }

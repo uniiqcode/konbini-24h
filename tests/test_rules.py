@@ -66,6 +66,31 @@ class Judge(unittest.TestCase):
         self.assertEqual(c("7-Eleven Japan"), "unsorted")
 
 
+class Tight(unittest.TestCase):
+    def test_food_only(self):
+        self.assertEqual(R.judge(video("Buying a WHOLE outfit from convenience stores in Japan")), "食品ではない")
+        self.assertEqual(R.judge(video("7-Eleven Japan")), "未分類")
+
+    def test_official_channel(self):
+        self.assertEqual(R.judge(dict(video("【ローソン】からあげクン"), channel="ローソン（LAWSON)")), "公式チャンネル")
+
+    def test_per_channel_cap(self):
+        vids = {str(i): dict(video("セブンの新作アイス", views=400000 + i), id=str(i), channel="同じ", channel_id="") for i in range(7)}
+        keep, dropped = collect.build(vids, R, set())
+        self.assertEqual(len(keep), R.per_channel)
+        self.assertEqual(dropped["同じチャンネルの上限"], 7 - R.per_channel)
+
+
+class Tags(unittest.TestCase):
+    def test_items_and_format(self):
+        self.assertEqual(R.tags("【セブン】SNSで話題の新作アイス食べてみた正直な感想🍫"), ["icecream", "controversy"])
+        self.assertEqual(R.tags("Can you finish this MASSIVE pasta from Japanese 7-Eleven?"), ["pasta", "bigeat"])
+        self.assertEqual(R.tags("일본 편의점에서 발견한 말차 치즈케이크"), ["cake", "matcha"])
+
+    def test_japan_is_not_bread(self):
+        self.assertNotIn("bread", R.tags("セブン-イレブン・ジャパンの新商品"))
+
+
 class Lang(unittest.TestCase):
     def test_detect(self):
         self.assertEqual(convini.detect_lang("セブンの新作"), "ja")
