@@ -1,4 +1,4 @@
-"""convini-shorts の共通部分: 設定とデータの読み書き、キーワードによる判定・分類。"""
+"""コンビニ24H（konbini-24h）の共通部分: 設定とデータの読み書き、キーワードによる判定・分類。"""
 import datetime
 import json
 import pathlib
