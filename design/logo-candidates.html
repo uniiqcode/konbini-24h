@@ -1,0 +1,111 @@
+<title>Konbini 24H Logos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@800;900&family=M+PLUS+Rounded+1c:wght@800&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap">
+<style>
+/* Layout: a logo review sheet. Each candidate gets a large light tile, a dark tile, and small-size checks (app icon, tab icon). */
+:root{
+  --paper:#F4F3EE; --card:#FFFFFF; --ink:#1C2127; --muted:#5E6670; --line:#DDDBD2;
+  --mustard:#E5B000; --mustard-deep:#C99A00; --night:#14202E;
+  --ui:"Zen Kaku Gothic New", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15181C;--card:#1E2228;--ink:#EEF0F2;--muted:#A3AAB3;--line:#2E333A;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#15181C;--card:#1E2228;--ink:#EEF0F2;--muted:#A3AAB3;--line:#2E333A;color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--ui);line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+h1{font-size:24px;margin:0 0 4px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 20px;font-size:14px;max-width:65ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:18px}
+.cand{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px;min-width:0}
+.head{display:flex;align-items:baseline;gap:10px}
+.head b{font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.head h2{font-size:17px;margin:0}
+.note{font-size:13px;color:var(--muted);margin:0}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tile{border-radius:8px;display:grid;place-items:center;padding:14px;min-height:130px}
+.tile.light{background:#FFFFFF;border:1px solid #E6E4DC}
+.tile.dark{background:var(--night)}
+.tile svg{width:100%;height:auto;max-height:120px}
+.small{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.small .ic{width:60px;height:60px;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.small .fav{width:16px;height:16px;border-radius:3px;overflow:hidden}
+.small svg{width:100%;height:100%;display:block}
+footer{margin-top:24px;font-size:12px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <h1>コンビニ24H ロゴ案</h1>
+  <p class="lead">絵の看板（白地にからし色の帯と「24H」）とつながる形を中心に6案。左は白い背景、右は夜の写真の上を想定した暗い背景。下はホーム画面のアイコン（60px）とタブのアイコン（16px）での見え方。からし色の上の文字は、読みやすさを優先して墨色にしています。</p>
+
+  <div class="grid">
+
+    <!-- A: sign -->
+    <section class="cand">
+      <div class="head"><b>A</b><h2>看板そのまま</h2></div>
+      <div class="tiles">
+        <div class="tile light"><svg viewBox="0 0 320 150" role="img" aria-label="KONBINI 24H"><rect x="10" y="10" width="300" height="130" rx="14" fill="#fff" stroke="#1C2127" stroke-width="4"/><text x="160" y="64" text-anchor="middle" font-family="Archivo Black" font-size="40" fill="#1C2127" letter-spacing="2">KONBINI</text><path d="M12 86h296v40a12 12 0 0 1-12 12H24a12 12 0 0 1-12-12z" fill="#E5B000"/><text x="160" y="128" text-anchor="middle" font-family="Archivo Black" font-size="38" fill="#1C2127">24H</text></svg></div>
+        <div class="tile dark"><svg viewBox="0 0 320 150" role="img" aria-label="KONBINI 24H"><rect x="10" y="10" width="300" height="130" rx="14" fill="#fff"/><text x="160" y="64" text-anchor="middle" font-family="Archivo Black" font-size="40" fill="#1C2127" letter-spacing="2">KONBINI</text><path d="M10 86h300v40a14 14 0 0 1-14 14H24a14 14 0 0 1-14-14z" fill="#E5B000"/><text x="160" y="128" text-anchor="middle" font-family="Archivo Black" font-size="38" fill="#1C2127">24H</text></svg></div>
+      </div>
+      <div class="small"><div class="ic"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><text x="30" y="26" text-anchor="middle" font-family="Archivo Black" font-size="11" fill="#1C2127">KONBINI</text><rect y="34" width="60" height="26" fill="#E5B000"/><text x="30" y="54" text-anchor="middle" font-family="Archivo Black" font-size="18" fill="#1C2127">24H</text></svg></div><div class="fav"><svg viewBox="0 0 16 16"><rect width="16" height="16" fill="#E5B000"/><text x="8" y="12" text-anchor="middle" font-family="Archivo Black" font-size="7.5" fill="#1C2127">24H</text></svg></div><span>絵の看板と同じ形。いちばん直接的</span></div>
+      <p class="note">ページの絵の看板と同じ形なので、「この店の名前」として覚えてもらいやすい。</p>
+    </section>
+
+    <!-- B: wordmark + tag -->
+    <section class="cand">
+      <div class="head"><b>B</b><h2>横一列＋からし色の札</h2></div>
+      <div class="tiles">
+        <div class="tile light"><svg viewBox="0 0 340 90" role="img" aria-label="KONBINI 24H"><text x="8" y="60" font-family="Archivo Black" font-size="44" fill="#1C2127" textLength="198" lengthAdjust="spacingAndGlyphs">KONBINI</text><rect x="222" y="16" width="110" height="58" rx="10" fill="#E5B000"/><text x="277" y="61" text-anchor="middle" font-family="Archivo Black" font-size="40" fill="#1C2127" textLength="86" lengthAdjust="spacingAndGlyphs">24H</text></svg></div>
+        <div class="tile dark"><svg viewBox="0 0 340 90" role="img" aria-label="KONBINI 24H"><text x="8" y="60" font-family="Archivo Black" font-size="44" fill="#fff" textLength="198" lengthAdjust="spacingAndGlyphs">KONBINI</text><rect x="222" y="16" width="110" height="58" rx="10" fill="#E5B000"/><text x="277" y="61" text-anchor="middle" font-family="Archivo Black" font-size="40" fill="#1C2127" textLength="86" lengthAdjust="spacingAndGlyphs">24H</text></svg></div>
+      </div>
+      <div class="small"><div class="ic"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#E5B000"/><text x="30" y="38" text-anchor="middle" font-family="Archivo Black" font-size="22" fill="#1C2127">24H</text></svg></div><div class="fav"><svg viewBox="0 0 16 16"><rect width="16" height="16" fill="#E5B000"/><text x="8" y="12" text-anchor="middle" font-family="Archivo Black" font-size="7.5" fill="#1C2127">24H</text></svg></div><span>アイコンは札だけ</span></div>
+      <p class="note">ページの上の細い帯にも収まる横長。アイコンは「24H」の札だけにできる。</p>
+    </section>
+
+    <!-- C: square stacked -->
+    <section class="cand">
+      <div class="head"><b>C</b><h2>正方形・24H が主役</h2></div>
+      <div class="tiles">
+        <div class="tile light"><svg viewBox="0 0 150 150" role="img" aria-label="KONBINI 24H" style="max-width:130px"><rect x="5" y="5" width="140" height="140" rx="22" fill="#E5B000"/><text x="75" y="44" text-anchor="middle" font-family="Archivo Black" font-size="20" fill="#1C2127" letter-spacing="2">KONBINI</text><text x="75" y="112" text-anchor="middle" font-family="Archivo Black" font-size="60" fill="#1C2127" textLength="112" lengthAdjust="spacingAndGlyphs">24H</text></svg></div>
+        <div class="tile dark"><svg viewBox="0 0 150 150" role="img" aria-label="KONBINI 24H" style="max-width:130px"><rect x="5" y="5" width="140" height="140" rx="22" fill="#E5B000"/><text x="75" y="44" text-anchor="middle" font-family="Archivo Black" font-size="20" fill="#1C2127" letter-spacing="2">KONBINI</text><text x="75" y="112" text-anchor="middle" font-family="Archivo Black" font-size="60" fill="#1C2127" textLength="112" lengthAdjust="spacingAndGlyphs">24H</text></svg></div>
+      </div>
+      <div class="small"><div class="ic"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#E5B000"/><text x="30" y="19" text-anchor="middle" font-family="Archivo Black" font-size="8.5" fill="#1C2127">KONBINI</text><text x="30" y="46" text-anchor="middle" font-family="Archivo Black" font-size="24" fill="#1C2127" textLength="46" lengthAdjust="spacingAndGlyphs">24H</text></svg></div><div class="fav"><svg viewBox="0 0 16 16"><rect width="16" height="16" fill="#E5B000"/><text x="8" y="12" text-anchor="middle" font-family="Archivo Black" font-size="7.5" fill="#1C2127">24H</text></svg></div><span>そのままアイコンになる</span></div>
+      <p class="note">ロゴとホーム画面のアイコンが同じ形。小さくしても「24H」がいちばん目に入る。</p>
+    </section>
+
+    <!-- D: storefront -->
+    <section class="cand">
+      <div class="head"><b>D</b><h2>お店の正面</h2></div>
+      <div class="tiles">
+        <div class="tile light"><svg viewBox="0 0 320 170" role="img" aria-label="KONBINI 24H"><rect x="20" y="20" width="280" height="40" fill="#E5B000"/><text x="282" y="51" text-anchor="end" font-family="Archivo Black" font-size="28" fill="#1C2127">24H</text><rect x="20" y="60" width="280" height="62" fill="#fff" stroke="#1C2127" stroke-width="4"/><path d="M90 60v62M160 60v62M230 60v62" stroke="#1C2127" stroke-width="3"/><path d="M40 100h30M110 92h30M110 106h20M180 98h30M250 94h30M250 108h20" stroke="#E5B000" stroke-width="5" stroke-linecap="round"/><text x="160" y="160" text-anchor="middle" font-family="Archivo Black" font-size="32" fill="#1C2127" letter-spacing="3">KONBINI</text></svg></div>
+        <div class="tile dark"><svg viewBox="0 0 320 170" role="img" aria-label="KONBINI 24H"><rect x="20" y="20" width="280" height="40" fill="#E5B000"/><text x="282" y="51" text-anchor="end" font-family="Archivo Black" font-size="28" fill="#1C2127">24H</text><rect x="20" y="60" width="280" height="62" fill="#FFF7D6"/><path d="M90 60v62M160 60v62M230 60v62" stroke="#14202E" stroke-width="3"/><path d="M40 100h30M110 92h30M110 106h20M180 98h30M250 94h30M250 108h20" stroke="#E5B000" stroke-width="5" stroke-linecap="round"/><text x="160" y="160" text-anchor="middle" font-family="Archivo Black" font-size="32" fill="#fff" letter-spacing="3">KONBINI</text></svg></div>
+      </div>
+      <div class="small"><div class="ic"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#14202E"/><rect x="6" y="12" width="48" height="14" fill="#E5B000"/><text x="50" y="23.5" text-anchor="end" font-family="Archivo Black" font-size="10" fill="#1C2127">24H</text><rect x="6" y="26" width="48" height="22" fill="#FFF7D6"/><path d="M22 26v22M38 26v22" stroke="#14202E" stroke-width="2"/></svg></div><div class="fav"><svg viewBox="0 0 16 16"><rect width="16" height="16" fill="#E5B000"/><text x="8" y="12" text-anchor="middle" font-family="Archivo Black" font-size="7.5" fill="#1C2127">24H</text></svg></div><span>アイコンは夜の店先</span></div>
+      <p class="note">富士山の絵の店（帯の右に 24H）と同じ。コンビニだとひと目でわかるが、細部は小さいと見えにくい。</p>
+    </section>
+
+    <!-- E: rounded friendly -->
+    <section class="cand">
+      <div class="head"><b>E</b><h2>丸い文字・やわらかく</h2></div>
+      <div class="tiles">
+        <div class="tile light"><svg viewBox="0 0 320 130" role="img" aria-label="KONBINI 24H"><text x="160" y="56" text-anchor="middle" font-family="'M PLUS Rounded 1c'" font-weight="800" font-size="44" fill="#1C2127" letter-spacing="1">KONBINI</text><rect x="95" y="70" width="130" height="50" rx="25" fill="#E5B000"/><text x="160" y="107" text-anchor="middle" font-family="'M PLUS Rounded 1c'" font-weight="800" font-size="36" fill="#1C2127">24H</text></svg></div>
+        <div class="tile dark"><svg viewBox="0 0 320 130" role="img" aria-label="KONBINI 24H"><text x="160" y="56" text-anchor="middle" font-family="'M PLUS Rounded 1c'" font-weight="800" font-size="44" fill="#fff" letter-spacing="1">KONBINI</text><rect x="95" y="70" width="130" height="50" rx="25" fill="#E5B000"/><text x="160" y="107" text-anchor="middle" font-family="'M PLUS Rounded 1c'" font-weight="800" font-size="36" fill="#1C2127">24H</text></svg></div>
+      </div>
+      <div class="small"><div class="ic"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#E5B000"/><text x="30" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c'" font-weight="800" font-size="21" fill="#1C2127">24H</text></svg></div><div class="fav"><svg viewBox="0 0 16 16"><rect width="16" height="16" rx="8" fill="#E5B000"/><text x="8" y="11.5" text-anchor="middle" font-family="'M PLUS Rounded 1c'" font-weight="800" font-size="7" fill="#1C2127">24H</text></svg></div><span>親しみやすい</span></div>
+      <p class="note">角のない文字で、かわいく親しみやすい。看板らしさはA〜Dより弱い。</p>
+    </section>
+
+    <!-- F: clock O -->
+    <section class="cand">
+      <div class="head"><b>F</b><h2>O が時計</h2></div>
+      <div class="tiles">
+        <div class="tile light"><svg viewBox="0 0 340 90" role="img" aria-label="KONBINI 24H"><text x="6" y="62" font-family="Archivo Black" font-size="46" fill="#1C2127">K</text><circle cx="68" cy="45" r="18" fill="none" stroke="#1C2127" stroke-width="8"/><path d="M68 45V34M68 45l8 5" stroke="#E5B000" stroke-width="4" stroke-linecap="round"/><text x="92" y="62" font-family="Archivo Black" font-size="46" fill="#1C2127" textLength="138" lengthAdjust="spacingAndGlyphs">NBINI</text><rect x="242" y="18" width="92" height="54" rx="10" fill="#E5B000"/><text x="288" y="59" text-anchor="middle" font-family="Archivo Black" font-size="34" fill="#1C2127" textLength="72" lengthAdjust="spacingAndGlyphs">24H</text></svg></div>
+        <div class="tile dark"><svg viewBox="0 0 340 90" role="img" aria-label="KONBINI 24H"><text x="6" y="62" font-family="Archivo Black" font-size="46" fill="#fff">K</text><circle cx="68" cy="45" r="18" fill="none" stroke="#fff" stroke-width="8"/><path d="M68 45V34M68 45l8 5" stroke="#E5B000" stroke-width="4" stroke-linecap="round"/><text x="92" y="62" font-family="Archivo Black" font-size="46" fill="#fff" textLength="138" lengthAdjust="spacingAndGlyphs">NBINI</text><rect x="242" y="18" width="92" height="54" rx="10" fill="#E5B000"/><text x="288" y="59" text-anchor="middle" font-family="Archivo Black" font-size="34" fill="#1C2127" textLength="72" lengthAdjust="spacingAndGlyphs">24H</text></svg></div>
+      </div>
+      <div class="small"><div class="ic"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#E5B000"/><circle cx="30" cy="30" r="17" fill="none" stroke="#1C2127" stroke-width="6"/><path d="M30 30V20M30 30l7 4" stroke="#1C2127" stroke-width="3.5" stroke-linecap="round"/></svg></div><div class="fav"><svg viewBox="0 0 16 16"><rect width="16" height="16" fill="#E5B000"/><circle cx="8" cy="8" r="5" fill="none" stroke="#1C2127" stroke-width="2"/><path d="M8 8V5M8 8l2 1" stroke="#1C2127" stroke-width="1.2" stroke-linecap="round"/></svg></div><span>アイコンは時計</span></div>
+      <p class="note">「24時間」を絵でも伝える遊び。ただし KONBINI が少し読みにくくなる。</p>
+    </section>
+
+  </div>
+  <footer>色: からし色 #E5B000（絵の看板の色）・墨色 #1C2127。3社の色（橙・緑・赤・青）は使っていません。文字は試作用の Google Fonts（Archivo Black・M PLUS Rounded 1c）。決まったら線（アウトライン）にして画像にします。</footer>
+</div>
