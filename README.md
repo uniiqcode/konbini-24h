@@ -1,8 +1,11 @@
-# convini-shorts（仮）｜日本のコンビニを紹介するショート動画の紹介
+# コンビニ24H（KONBINI 24H）｜日本のコンビニの人気ショート動画
 
 日本のコンビニを紹介している YouTube ショートを集めて紹介するページ（アプリ）。「業スー酒場」（`uniiqcode/gyosu-sakaba`）と同じ「紹介している動画を紹介する」形。
 
-> 仕様は `docs/spec.md`。名前は相談中。経緯は `STATUS.md`。
+> 仕様は `docs/spec.md`。経緯は `STATUS.md`。
+>
+> - リポジトリ: `uniiqcode/konbini-24h`（2026-11-07 に `convini-shorts` から名前を変えた）
+> - ページの URL（公開後）: `https://uniiqcode.github.io/konbini-24h/`
 
 ## 方針（今のところ）
 
