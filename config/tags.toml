@@ -62,6 +62,11 @@ words = ["からあげ", "唐揚げ", "から揚げ", "ファミチキ", "チキ
 label = { ja = "からあげ・チキン", ko = "가라아게·치킨", zh = "炸雞", en = "Fried chicken" }
 
 [[items]]
+key = "takoyaki"
+words = ["たこ焼", "たこやき", "takoyaki", "타코야키", "章魚燒"]
+label = { ja = "たこ焼き", ko = "타코야키", zh = "章魚燒", en = "Takoyaki" }
+
+[[items]]
 key = "sausage"
 words = ["ソーセージ", "sausage", "소시지", "香腸"]
 label = { ja = "ソーセージ", ko = "소시지", zh = "香腸", en = "Sausage" }

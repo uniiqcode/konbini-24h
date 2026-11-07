@@ -33,6 +33,7 @@
 | `scripts/collect.py` | 集めて `data/videos.json` を作り直す（共通部分は `scripts/convini.py`） |
 | `data/videos.json` | ページに載せる動画 |
 | `data/exclude.txt` | 人が外した動画の ID |
+| `data/candidates.json` | 最後の検索で見つけた動画の ID（`--rejudge` で使う） |
 | `tests/` | 判定・分類のテスト（ネットにつながない）。`python3 -m unittest discover -s tests` |
 | `scripts/survey_language.py` | 12の言語で「日本のコンビニ」を検索し、本数・ショートの数・音声の言語を集計 |
 | `scripts/survey_top100.py` | 再生数の多い順で取り足して、上位100本を言語別に分ける |
@@ -44,4 +45,4 @@
 
 - キーはコミットしない。Claude Code のクラウド環境では、環境のネットワークシークレット（`www.googleapis.com` / `X-Goog-Api-Key`）からプロキシが自動で入れる
 - GitHub Actions で動かす時は Secrets の `YOUTUBE_API_KEY` に入れる（スクリプトは環境変数があればヘッダーに入れる）
-- 今のキーは Google Cloud のプロジェクト `gyosu-sakaba` のもの。無料枠（1日10,000ユニット）を業スー酒場と分け合う。自動で動かす前に、別のプロジェクトのキーに分けるか決める
+- キーは Google Cloud のプロジェクト `convini-shorts` のもの（2026-11-07 に作成。業スー酒場とは無料枠が別）

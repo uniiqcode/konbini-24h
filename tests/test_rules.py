@@ -81,6 +81,15 @@ class Tight(unittest.TestCase):
         self.assertEqual(dropped["同じチャンネルの上限"], 7 - R.per_channel)
 
 
+    def test_ads_are_excluded(self):
+        self.assertEqual(R.judge(video("#PR #ローソン #超ハッピーすぎチャレンジ 弁当")), "除外の言葉")
+        self.assertIsInstance(R.judge(video("ローソンのプリンがうまい")), dict)
+
+    def test_description_with_many_categories_is_unsorted(self):
+        self.assertEqual(R.category("Could YOU Break STEEL in Japan's Convenience store?", "ramen onigiri ice cream coffee"), "unsorted")
+        self.assertEqual(R.category("ローソンの新しいやつ", "ガトーショコラを食べた"), "sweets")
+
+
 class Tags(unittest.TestCase):
     def test_items_and_format(self):
         self.assertEqual(R.tags("【セブン】SNSで話題の新作アイス食べてみた正直な感想🍫"), ["icecream", "controversy"])
