@@ -54,6 +54,7 @@
 - 2026-11-07: ページの最後に訪問者数のカウンターを置くと決定: GoatCounter で数え、訪問者数と上位10か国を毎朝の更新で書き込む → `docs/spec.md`。GoatCounter の登録は制作の時に人が行う
 - 2026-11-08: 別のセッションで、uniiqcode の GitHub Pages が独自ドメイン **uniiqcode.com** になった → このページの正式な URL は `https://uniiqcode.com/konbini-24h/`（README・spec を更新）
 - 2026-11-08: 人が GoatCounter に登録中。アカウント名（1つ目のサイトのコード）は `konbini24h`、Site domain は `uniiqcode.com`。業スー酒場は同じアカウントに2つ目のサイトとして足す予定（サイトごとにコードとトークンを分ける）
+- 2026-11-08: GoatCounter の登録が完了。設定: Sessions・Country はオン、Region はオフ、データは消さない（retention 0）。API トークン（権限は Read statistics だけ、サイトは konbini24h だけ）を作り、GitHub の Secrets `GOATCOUNTER_TOKEN` に入れた
 - 2026-11-07: スライド1の2回目（`design/slide-tokyo.webp`）を**採用**
 - 2026-11-07: 次は京都の夕方（町家の通りのコンビニの前で、レンタル着物の黒人の男女が手を振り、舞妓さんが会釈して通り過ぎる）。日本らしさの中にアニメもあるので、写真風・アニメ背景美術風・写真＋アニメ調の人物の3つのタッチで比べる → `design/hero-slides.md`
 - 2026-11-07: 京都の1回目は舞妓さんが話を盛りすぎ・コンビニの意味がない → 舞妓さんを消し、食べ歩きをしない形で商品とつなげる（二人が買ったばかりの抹茶のロールケーキを見せ合う）。2回目を**採用**（`design/slide-kyoto.webp`）。残りは2場面
@@ -69,7 +70,6 @@
 | 画面の見た目を詰める（色・ロゴ・名前・並び） | 人＋Claude |
 | （念のため）J-PlatPat の商標検索で KONBINI24H・コンビニ２４ も見る（`docs/name-check.md`） | 人 |
 | ロゴを6案から選んで詰める（11/8 以降） | 人＋Claude |
-| GoatCounter に登録し、API トークンを Secrets に入れる（制作の時） | 人 |
 | 富士山の7回目を ChatGPT に頼む（11/8、上限の解除後） | 人 |
 | 毎日の自動収集とページの公開（GitHub Actions・Pages） | Claude |
 | GitHub の Secrets `YOUTUBE_API_KEY` に新しいキーを入れる（毎日の自動収集の前）。公開の時にリポジトリを public にする | 人 |
