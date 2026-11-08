@@ -56,6 +56,7 @@
 - 2026-11-08: 人が GoatCounter に登録中。アカウント名（1つ目のサイトのコード）は `konbini24h`、Site domain は `uniiqcode.com`。業スー酒場は同じアカウントに2つ目のサイトとして足す予定（サイトごとにコードとトークンを分ける）
 - 2026-11-08: GoatCounter の登録が完了。設定: Sessions・Country はオン、Region はオフ、データは消さない（retention 0）。API トークン（権限は Read statistics だけ、サイトは konbini24h だけ）を作り、GitHub の Secrets `GOATCOUNTER_TOKEN` に入れた
 - 2026-11-08: GitHub の Secrets に `GOATCOUNTER_TOKEN` と `YOUTUBE_API_KEY`（11/7 に登録）がそろっていることを人の画面で確認。PR #10 をマージ
+- 2026-11-08: 人の方針で、SEO は先に業スー酒場（日本語だけ）で実装し、課題と解決をコンビニ24H と共有する → SEO の手順・チェックリスト・課題と解決の記録を claude-skills の `seo-uniiqcode` スキルにまとめた（uniiqcode/claude-skills の PR #2）
 - 2026-11-07: スライド1の2回目（`design/slide-tokyo.webp`）を**採用**
 - 2026-11-07: 次は京都の夕方（町家の通りのコンビニの前で、レンタル着物の黒人の男女が手を振り、舞妓さんが会釈して通り過ぎる）。日本らしさの中にアニメもあるので、写真風・アニメ背景美術風・写真＋アニメ調の人物の3つのタッチで比べる → `design/hero-slides.md`
 - 2026-11-07: 京都の1回目は舞妓さんが話を盛りすぎ・コンビニの意味がない → 舞妓さんを消し、食べ歩きをしない形で商品とつなげる（二人が買ったばかりの抹茶のロールケーキを見せ合う）。2回目を**採用**（`design/slide-kyoto.webp`）。残りは2場面
