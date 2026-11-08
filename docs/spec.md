@@ -91,7 +91,7 @@
 
 ## 検索対策（SEO、2026-11-07 決定）
 
-無料の範囲で行う。
+無料の範囲で行う。手順と、業スー酒場と共有する課題と解決の記録は、claude-skills の **`seo-uniiqcode`** スキルにまとめてある（業スー酒場で先に実装し、分かったことをここに取り入れる）。
 
 - **正式な URL は `https://uniiqcode.com/konbini-24h/`**（2026-11-08。uniiqcode の GitHub Pages が独自ドメイン uniiqcode.com になった）。`canonical`・`hreflang`・サイトマップ・OGP の URL はすべてこちらで書く
 
