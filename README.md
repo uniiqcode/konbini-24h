@@ -5,7 +5,7 @@
 > 仕様は `docs/spec.md`。経緯は `STATUS.md`。
 >
 > - リポジトリ: `uniiqcode/konbini-24h`（2026-11-07 に `convini-shorts` から名前を変えた）
-> - ページの URL（公開後）: `https://uniiqcode.github.io/konbini-24h/`
+> - ページの URL（公開後）: `https://uniiqcode.com/konbini-24h/`（2026-11-08 に uniiqcode の GitHub Pages が独自ドメイン uniiqcode.com になったため。`uniiqcode.github.io/konbini-24h/` からも転送される）
 
 ## 方針（今のところ）
 

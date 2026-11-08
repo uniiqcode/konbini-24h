@@ -93,6 +93,8 @@
 
 無料の範囲で行う。
 
+- **正式な URL は `https://uniiqcode.com/konbini-24h/`**（2026-11-08。uniiqcode の GitHub Pages が独自ドメイン uniiqcode.com になった）。`canonical`・`hreflang`・サイトマップ・OGP の URL はすべてこちらで書く
+
 - **言語ごとに別の URL**: `/ja/`・`/ko/`・`/zh-tw/`・`/en/` の4ページを、毎日の更新で作る。一番上の `/` に来た人だけ、スマホの言語で振り分ける（切り替えのボタンも残す）。各ページに `hreflang`（4言語＋`x-default` は英語）を入れる
 - **動画の一覧は HTML に書き込んで作る**（JavaScript で後から描かない）。絞り込み・並べ替えは JavaScript で行ってよい
 - META タグ: 言語ごとのタイトルと説明文、`lang`、`canonical`
