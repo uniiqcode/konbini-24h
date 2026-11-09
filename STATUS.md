@@ -69,6 +69,7 @@
   - テストは29件すべて通る
 - 2026-11-09: PR #12 をマージ。1回目の Actions は Pages が未設定で失敗（GoatCounter も 404）→ 訪問者数を合計と国別で別々に受け取るよう直した（PR #13）
 - 2026-11-09: 人がリポジトリを public にし、Pages の Source を GitHub Actions にした。手で動かした2回目（集め直し→ data ブランチに記録→公開）と、PR #13 のマージで動いた3回目が成功。**https://uniiqcode.com/konbini-24h/ で公開**。集め直しで86本、分類のページは rice・sweets・mixed（1言語8ページ）。訪問者数も受け取れた
+- 2026-11-09: uniiqcode.com のトップのメニュー（業スー酒場の次）・JSON-LD・robots.txt のサイトマップの行にコンビニ24H を足した（uniiqcode/uniiqcode.github.io の PR #29、マージ済み）
 - 2026-11-07: スライド1の2回目（`design/slide-tokyo.webp`）を**採用**
 - 2026-11-07: 次は京都の夕方（町家の通りのコンビニの前で、レンタル着物の黒人の男女が手を振り、舞妓さんが会釈して通り過ぎる）。日本らしさの中にアニメもあるので、写真風・アニメ背景美術風・写真＋アニメ調の人物の3つのタッチで比べる → `design/hero-slides.md`
 - 2026-11-07: 京都の1回目は舞妓さんが話を盛りすぎ・コンビニの意味がない → 舞妓さんを消し、食べ歩きをしない形で商品とつなげる（二人が買ったばかりの抹茶のロールケーキを見せ合う）。2回目を**採用**（`design/slide-kyoto.webp`）。残りは2場面
@@ -82,7 +83,6 @@
 | （念のため）J-PlatPat の商標検索で KONBINI24H・コンビニ２４ も見る（`docs/name-check.md`） | 人 |
 | 公開したページを開いて確かめる（サムネイル・スライドショー・訪問者数・SNS で共有した時の表示） | 人 |
 | Search Console にサイトマップ（https://uniiqcode.com/konbini-24h/sitemap.xml ）を送る。Naver Search Advisor に登録する（`docs/seo.md`） | 人 |
-| 公開したら、uniiqcode.com の robots.txt とトップの一覧にコンビニ24H を足す | 別のセッション |
 
 ## 未決
 
