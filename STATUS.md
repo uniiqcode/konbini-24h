@@ -70,12 +70,8 @@
 
 | やること | 担当 |
 |----------|------|
-| スライド1の絵を ChatGPT で作る（`design/hero-slides.md` のプロンプト） | 人 |
-| スライド2以降の場面を決める | 人＋Claude |
-| 画面の見た目を詰める（色・ロゴ・名前・並び） | 人＋Claude |
 | （念のため）J-PlatPat の商標検索で KONBINI24H・コンビニ２４ も見る（`docs/name-check.md`） | 人 |
 | 本番のページを作る（4言語・店ごとのページ・SEO・スライドショー・ロゴの画像・訪問者数）と、毎日の自動収集・公開（GitHub Actions） | Claude |
-| 毎日の自動収集とページの公開（GitHub Actions・Pages） | Claude |
 | 公開の時にリポジトリを public にする（GitHub Pages を無料で使うため） | 人 |
 
 ## 未決
