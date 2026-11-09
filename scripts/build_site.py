@@ -74,16 +74,23 @@ def goatcounter(site, token, day):
 
     try:
         total = int(get("stats/total")["total"])
+    except urllib.error.HTTPError as err:
+        print(f"訪問者数（stats/total）を受け取れなかった: {err} {err.read()[:300].decode('utf-8', 'replace')}", file=sys.stderr)
+        return None
+    except Exception as err:  # noqa: BLE001  数が取れなくてもページは作る
+        print(f"訪問者数（stats/total）を受け取れなかった: {err}", file=sys.stderr)
+        return None
+    countries = []
+    try:   # 国別の数が取れなくても、合計だけは書く
         locs = get("stats/locations", limit=100).get("stats") or []
         countries = [(x.get("id") or "", x.get("name") or x.get("id") or "", int(x.get("count", 0))) for x in locs]
         countries = [c for c in countries if c[0] and c[2] > 0]
         countries.sort(key=lambda c: -c[2])
-        return total, countries
     except urllib.error.HTTPError as err:
-        print(f"訪問者数を受け取れなかった: {err} {err.read()[:300].decode('utf-8', 'replace')}", file=sys.stderr)
-    except Exception as err:  # noqa: BLE001  数が取れなくてもページは作る
-        print(f"訪問者数を受け取れなかった: {err}", file=sys.stderr)
-    return None
+        print(f"国別の数（stats/locations）を受け取れなかった: {err} {err.read()[:300].decode('utf-8', 'replace')}", file=sys.stderr)
+    except Exception as err:  # noqa: BLE001
+        print(f"国別の数（stats/locations）を受け取れなかった: {err}", file=sys.stderr)
+    return total, countries
 
 
 def flag(code):
@@ -99,8 +106,8 @@ def visitors_html(t, stats, day):
     more = len(countries) - len(shown)
     others = f'<li class="others">{e(fmt(t["visitors_others"], n=more))}</li>' if more > 0 else ""
     asof = day - datetime.timedelta(days=1)
-    return (f'<div class="visitors"><p>{e(fmt(t["visitors"], asof, n=f"{total:,}"))}</p>'
-            f'<ul class="countries">{lis}{others}</ul></div>')
+    ul = f'<ul class="countries">{lis}{others}</ul>' if shown else ""
+    return f'<div class="visitors"><p>{e(fmt(t["visitors"], asof, n=f"{total:,}"))}</p>{ul}</div>'
 
 
 # ---- ページの部品 ----
