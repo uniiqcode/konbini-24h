@@ -34,6 +34,10 @@
 | `config/sources.toml` | YouTube の検索語 |
 | `config/tags.toml` | 中身のタグの辞書（4言語のラベル） |
 | `scripts/collect.py` | 集めて `data/videos.json` を作り直す（共通部分は `scripts/convini.py`） |
+| `scripts/build_site.py` | 4言語のページ・店ごと・分類ごとのページ・サイトマップを `_site/` に作る（`site/page.html`、文言は `config/site.toml`） |
+| `scripts/make_assets.py` | ロゴ・アイコン・共有用の絵・背景の絵（`site/assets/`）を作る（デザインを変えた時に手で） |
+| `.github/workflows/daily.yml` | 毎朝 5:40 に集め直し、ページを作って公開する（集めた結果は `data` ブランチ） |
+| `docs/seo.md` | 検索対策と、公開する日に人がすること |
 | `data/videos.json` | ページに載せる動画 |
 | `data/exclude.txt` | 人が外した動画の ID |
 | `data/candidates.json` | 最後の検索で見つけた動画の ID（`--rejudge` で使う） |

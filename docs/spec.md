@@ -140,7 +140,7 @@
 
 ## 更新
 
-- 毎日 GitHub Actions で集めて `data/videos.json` を作り直し、ページを公開する（GitHub Pages）
+- 毎日 GitHub Actions で集めて `data/videos.json` を作り直し、ページを公開する（GitHub Pages、`.github/workflows/daily.yml`）。集めた結果は main ではなく `data` ブランチに記録する（PR は作らない）。main の `data/videos.json` は最初の試しの結果のまま
 - 載っている動画の再生数も毎日取り直す（YouTube API の規約で、保存した統計は30日以内に取り直す）。基準から外れた動画（90日を過ぎたもの）は落ちる
 - **自動で反映する**（PR を通さない）。外したい動画は人が `data/exclude.txt` に ID を書く
 - API の使用量は1日約2,400ユニット（検索24回＋詳細の取得）

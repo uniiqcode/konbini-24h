@@ -1,0 +1,220 @@
+# ページの文言（4言語）。ページは毎日 scripts/build_site.py で作り直す。
+# 店・分類の名前は docs/spec.md の表と同じ。タグの名前は config/tags.toml。
+# 言語のキー: ja（日本語）・ko（韓国語）・zh（繁体字・台湾。URL は zh-tw）・en（英語。それ以外の言語の人も）
+
+[site]
+url = "https://uniiqcode.com/konbini-24h/"      # 正式な URL（seo-uniiqcode スキル）
+goatcounter = "https://konbini24h.goatcounter.com"
+count_from = "2026-11-08"                        # 訪問者数を数え始めた日
+category_page_min = 10                           # 分類のページを作る本数（これ以上ある分類だけ）
+slides = ["tokyo", "kyoto", "fuji", "slope"]     # 背景のスライドショーの順
+# 人物が左寄りの絵は、スマホで見せる位置を左に寄せる（CSS の object-position の横の値）
+slide_position = { tokyo = "50%", kyoto = "30%", fuji = "50%", slope = "28%" }
+
+[lang.ja]
+path = "ja"
+html_lang = "ja"
+hreflang = "ja"
+og_locale = "ja_JP"
+name = "日本語"
+site_name = "コンビニ24H"
+headline = "バズってるコンビニ動画"
+lead = "セブン・ファミマ・ローソンの、いま話題のショート動画。"
+description = "セブン-イレブン・ファミリーマート・ローソンの、いまバズっている日本のコンビニのショート動画を毎日集めて紹介。おにぎり・スイーツ・新商品など、世界中で見られている動画を、店と食べ物の種類から探せます。"
+captions = ["夜中の2時でも開いている", "京都の町にも似合う", "旅の途中に、ふらっと", "いつもの帰り道に"]
+slide_alt = ["午前2時の東京の路地。コンビニから、スムージーとレジ袋を持った女性が出てくる", "夕方の京都の町家の通り。コンビニの前で、着物の二人が抹茶のスイーツを見せ合って笑う", "富士山と海のあいだのコンビニ。駐車場で3人がコーヒーを手に立ち話", "住宅街の坂道の上のコンビニ。制服の高校生3人がお菓子を分け合う。遠くに川"]
+all = "すべて"
+stores_label = "店"
+categories_label = "食べ物"
+sort_views = "再生数順"
+sort_new = "新しい順"
+count = "{n}本"
+views_large = "{v}億回"
+views_mid = "{v}万回"
+views_small = "{v}回"
+ago_today = "今日"
+ago_days = "{d}日前"
+empty = "この条件の動画はまだありません"
+store_title = "{store}のバズってる動画"
+store_description = "{store}を紹介している、いま人気の日本のコンビニのショート動画。毎日更新。"
+category_title = "{category}のバズってるコンビニ動画"
+category_description = "日本のコンビニの{category}を紹介している、いま人気のショート動画。セブン-イレブン・ファミリーマート・ローソン。毎日更新。"
+back_to_all = "すべての動画"
+pages_label = "食べ物の種類ごとのページ"
+updated = "毎日更新・{m}月{d}日に更新"
+visitors = "これまでの訪問者 {n}人（{m}月{d}日時点）"
+visitors_others = "ほか {n}か国"
+footer = ["YouTube のショート動画を紹介しています。動画は YouTube で再生されます。", "非公式のページです。セブン-イレブン・ファミリーマート・ローソンとは関係ありません。", "訪問者数は GoatCounter で数えています（個人を特定する情報は保存しません）。"]
+lang_label = "言語"
+choose = "言語を選んでください"
+
+[lang.ja.stores]
+seven = "セブン-イレブン"
+familymart = "ファミリーマート"
+lawson = "ローソン"
+all = "食べ比べ・コンビニ全般"
+
+[lang.ja.categories]
+rice = "おにぎり・弁当・麺"
+bread = "パン・サンド"
+hotsnack = "ホットスナック"
+sweets = "スイーツ・アイス"
+snack = "お菓子"
+drink = "飲み物・お酒"
+mixed = "いろいろ・新商品"
+
+[lang.ko]
+path = "ko"
+html_lang = "ko"
+hreflang = "ko"
+og_locale = "ko_KR"
+name = "한국어"
+site_name = "KONBINI 24H"
+headline = "일본 편의점 인기 쇼츠"
+lead = "세븐·패밀리마트·로손, 지금 화제인 쇼츠 모음."
+description = "세븐일레븐·패밀리마트·로손 등 지금 화제인 일본 편의점 쇼츠를 매일 모아 소개합니다. 삼각김밥, 디저트, 신상품까지 매장과 음식 종류별로 찾아보세요."
+captions = ["새벽 2시에도 열려 있어요", "교토 거리에도 잘 어울려요", "여행 중에 잠깐 들러요", "늘 걷는 귀갓길에"]
+slide_alt = ["새벽 2시 도쿄의 골목. 편의점에서 스무디와 봉투를 든 여성이 나온다", "해 질 녘 교토의 마치야 거리. 편의점 앞에서 기모노 차림의 두 사람이 말차 디저트를 보며 웃는다", "후지산과 바다 사이의 편의점. 주차장에서 세 사람이 커피를 들고 이야기한다", "주택가 언덕 위의 편의점. 교복 차림의 고등학생 세 명이 과자를 나눠 먹는다"]
+all = "전체"
+stores_label = "매장"
+categories_label = "음식"
+sort_views = "조회수순"
+sort_new = "최신순"
+count = "{n}개"
+views_large = "{v}억회"
+views_mid = "{v}만회"
+views_small = "{v}회"
+ago_today = "오늘"
+ago_days = "{d}일 전"
+empty = "조건에 맞는 영상이 아직 없어요"
+store_title = "{store} 인기 쇼츠"
+store_description = "{store}를 소개하는 지금 인기 있는 일본 편의점 쇼츠. 매일 업데이트."
+category_title = "일본 편의점 {category} 인기 쇼츠"
+category_description = "일본 편의점의 {category}를 소개하는 지금 인기 있는 쇼츠. 세븐일레븐·패밀리마트·로손. 매일 업데이트."
+back_to_all = "모든 영상"
+pages_label = "음식 종류별 페이지"
+updated = "매일 업데이트 · {m}월 {d}일 업데이트"
+visitors = "지금까지 방문자 {n}명 ({m}월 {d}일 기준)"
+visitors_others = "그 외 {n}개국"
+footer = ["YouTube 쇼츠를 소개합니다. 영상은 YouTube에서 재생됩니다.", "비공식 페이지이며 세븐일레븐·패밀리마트·로손과 관계없습니다.", "방문자 수는 GoatCounter로 집계합니다(개인을 식별하는 정보는 저장하지 않습니다)."]
+lang_label = "언어"
+choose = "언어를 선택하세요"
+
+[lang.ko.stores]
+seven = "세븐일레븐"
+familymart = "패밀리마트"
+lawson = "로손"
+all = "여러 편의점"
+
+[lang.ko.categories]
+rice = "삼각김밥·도시락·면"
+bread = "빵·샌드위치"
+hotsnack = "핫스낵"
+sweets = "디저트·아이스크림"
+snack = "과자"
+drink = "음료·술"
+mixed = "여러 가지·신상품"
+
+[lang.zh]
+path = "zh-tw"
+html_lang = "zh-Hant-TW"
+hreflang = "zh-Hant-TW"
+og_locale = "zh_TW"
+name = "繁中"
+site_name = "KONBINI 24H"
+headline = "日本超商爆紅短影音"
+lead = "7-ELEVEN、全家、LAWSON 最近爆紅的短影音。"
+description = "每天整理7-ELEVEN、全家、LAWSON等日本超商正在爆紅的短影音。飯糰、甜點、新品，依超商和食物種類輕鬆找到全世界都在看的影片。"
+captions = ["凌晨兩點也開著", "京都街頭也很搭", "旅途中，順路逛逛", "每天回家的路上"]
+slide_alt = ["凌晨兩點的東京巷弄。一位女性拿著果昔和塑膠袋走出超商", "傍晚的京都町家街道。穿和服的兩人在超商前看著抹茶甜點微笑", "富士山與大海之間的超商。三個人在停車場拿著咖啡聊天", "住宅區坡道上的超商。三位穿制服的高中生分著零食吃，遠方有河"]
+all = "全部"
+stores_label = "超商"
+categories_label = "食物"
+sort_views = "觀看次數"
+sort_new = "最新"
+count = "{n} 部"
+views_large = "{v}億次"
+views_mid = "{v}萬次"
+views_small = "{v}次"
+ago_today = "今天"
+ago_days = "{d} 天前"
+empty = "目前沒有符合條件的影片"
+store_title = "{store}爆紅短影音"
+store_description = "介紹{store}的日本超商人氣短影音。每天更新。"
+category_title = "日本超商{category}爆紅短影音"
+category_description = "介紹日本超商{category}的人氣短影音。7-ELEVEN、全家、LAWSON。每天更新。"
+back_to_all = "所有影片"
+pages_label = "依食物種類的頁面"
+updated = "每天更新・{m}月{d}日更新"
+visitors = "累計訪客 {n} 人（{m}月{d}日為止）"
+visitors_others = "其他 {n} 個國家"
+footer = ["本頁介紹 YouTube 短影音，影片於 YouTube 播放。", "非官方網頁，與 7-ELEVEN、全家、LAWSON 無關。", "訪客數由 GoatCounter 統計（不保存可識別個人的資訊）。"]
+lang_label = "語言"
+choose = "請選擇語言"
+
+[lang.zh.stores]
+seven = "7-ELEVEN"
+familymart = "全家"
+lawson = "LAWSON"
+all = "多家超商"
+
+[lang.zh.categories]
+rice = "飯糰・便當・麵"
+bread = "麵包・三明治"
+hotsnack = "熱食・炸物"
+sweets = "甜點・冰品"
+snack = "零食"
+drink = "飲料・酒"
+mixed = "綜合・新品"
+
+[lang.en]
+path = "en"
+html_lang = "en"
+hreflang = "en"
+og_locale = "en_US"
+name = "EN"
+site_name = "KONBINI 24H"
+headline = "Viral Japan Konbini Shorts"
+lead = "The most-watched shorts about 7-Eleven, FamilyMart and Lawson in Japan."
+description = "Daily picks of the most-watched YouTube Shorts about Japanese convenience stores: 7-Eleven, FamilyMart and Lawson. Browse onigiri, sweets and new items by store and food type."
+captions = ["Open even at 2 a.m.", "Right at home in Kyoto", "A quick stop on the road", "On the way home, every day"]
+slide_alt = ["A Tokyo alley at 2 a.m. A woman walks out of a convenience store with a smoothie and a bag", "A machiya street in Kyoto at dusk. Two people in kimono smile at a matcha dessert outside a convenience store", "A convenience store between Mt. Fuji and the sea. Three people chat over coffee in the parking lot", "A convenience store at the top of a residential slope. Three high school students share snacks, a river in the distance"]
+all = "All"
+stores_label = "Store"
+categories_label = "Food"
+sort_views = "Most viewed"
+sort_new = "Newest"
+count = "{n} videos"
+views_large = "{v}M views"
+views_mid = "{v}K views"
+views_small = "{v} views"
+ago_today = "today"
+ago_days = "{d}d ago"
+empty = "No videos match these filters yet"
+store_title = "Viral {store} Japan Shorts"
+store_description = "The most popular shorts about {store} in Japan, updated daily."
+category_title = "Viral Japan Konbini {category} Shorts"
+category_description = "The most popular shorts about {category} at Japanese convenience stores: 7-Eleven, FamilyMart and Lawson. Updated daily."
+back_to_all = "All videos"
+pages_label = "Pages by food type"
+updated = "Updated daily. Last updated {month} {d}"
+visitors = "{n} visitors so far (as of {month} {d})"
+visitors_others = "{n} more countries"
+footer = ["We introduce YouTube Shorts. Videos play on YouTube.", "Unofficial page. Not affiliated with 7-Eleven, FamilyMart or Lawson.", "Visitors are counted with GoatCounter (no personal information is stored)."]
+lang_label = "Language"
+choose = "Choose your language"
+
+[lang.en.stores]
+seven = "7-Eleven"
+familymart = "FamilyMart"
+lawson = "Lawson"
+all = "Multiple stores"
+
+[lang.en.categories]
+rice = "Onigiri, Bento & Noodles"
+bread = "Bread & Sandwiches"
+hotsnack = "Hot Snacks"
+sweets = "Sweets & Ice Cream"
+snack = "Snacks & Candy"
+drink = "Drinks"
+mixed = "Mixed & New Items"

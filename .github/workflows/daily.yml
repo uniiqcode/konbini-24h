@@ -1,0 +1,97 @@
+# 毎朝、YouTube から動画を集め直し、ページを作って GitHub Pages に公開する（PR は作らない。自動で反映）。
+# 集めた結果（data/videos.json・data/candidates.json）は main ではなく data ブランチに記録する。
+# main のページ・設定・スクリプトが変わった時は、集め直さずにページだけ作り直す（data ブランチの結果を使う）。
+name: 毎日の更新と公開
+
+on:
+  schedule:
+    - cron: "40 20 * * *"   # 毎日 5:40（日本時間）。GitHub の混み具合で遅れることがある
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "scripts/**"
+      - "config/**"
+      - "data/exclude.txt"
+      - ".github/workflows/daily.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  DATA_BRANCH: data
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: テスト
+        run: python3 -m unittest discover -s tests
+
+      - name: これまでの集めた結果を読む（data ブランチ）
+        run: |
+          if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null; then
+            git fetch origin "$DATA_BRANCH"
+            git checkout "origin/$DATA_BRANCH" -- data/videos.json data/candidates.json || true
+          fi
+
+      - name: 集め直す（約2,400ユニット）
+        if: github.event_name != 'push'
+        continue-on-error: true   # 集められなくても、これまでの結果でページは作る
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python3 scripts/collect.py
+
+      - name: 集めた結果を data ブランチに記録する
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          D="$RUNNER_TEMP/data-branch"
+          if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null; then
+            git worktree add -B "$DATA_BRANCH" "$D" "origin/$DATA_BRANCH"
+          else
+            git worktree add --orphan -b "$DATA_BRANCH" "$D"
+          fi
+          mkdir -p "$D/data"
+          cp data/videos.json data/candidates.json "$D/data/"
+          cd "$D"
+          git add data
+          if git diff --cached --quiet; then echo "変わったところはない"; exit 0; fi
+          git commit -m "毎日の収集 $(TZ=Asia/Tokyo date +%F)"
+          git push origin "$DATA_BRANCH"
+
+      - name: ページを作る
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}   # 訪問者数を受け取るため（読むだけの権限）
+        run: python3 scripts/build_site.py
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
