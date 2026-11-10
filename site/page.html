@@ -120,7 +120,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--tag); outline-o
     <nav class="row" aria-label="__STORE_LABEL__">__STORES__</nav>
     <div class="row" id="cats" role="group" aria-label="__CAT_LABEL__"__CATS_HIDDEN__>__CATS__</div>
     <div class="bar">
-      <div class="seg" id="sort" role="group"><button type="button" data-s="views" aria-pressed="true">__SORT_VIEWS__</button><button type="button" data-s="new" aria-pressed="false">__SORT_NEW__</button></div>
+      <div class="seg" id="sort" role="group"><button type="button" data-s="new" aria-pressed="true">__SORT_NEW__</button><button type="button" data-s="views" aria-pressed="false">__SORT_VIEWS__</button></div>
       <span class="count" id="count">__COUNT__</span>
     </div>
   </div>
@@ -147,7 +147,7 @@ __CARDS__
   var T = __I18N__;
   var grid = document.getElementById("grid");
   var cards = Array.prototype.slice.call(grid.children);
-  var state = { k: "", sort: "views" };
+  var state = { k: "", sort: "new" };   // 最初は新しい順（開くたびに新しい動画が目に入るように）
 
   // 選んだ言語を覚える（一番上のページの振り分けで使う）
   document.querySelectorAll(".langs a").forEach(function (a) {

@@ -5,7 +5,7 @@
   SVG に入れるので、ページはフォントを読み込まない。
 作るもの（site/assets/）:
   logo-a.svg            ページ上部のロゴ（案A: 白い看板＋からし色の帯に 24H）
-  icon.svg              アイコン（案C: からし色の正方形、KONBINI と大きな 24H）
+  icon.svg              アイコン（案C: 上の白に KON・BINI、下のからし色に 24H の3段、同じ文字の大きさ）
   icon-*.png, apple-touch-icon.png, favicon-32.png, favicon.ico   アイコンの各サイズ（Playwright で描く）
   og.jpg                SNS で共有した時の絵（1200×630。東京の絵＋ロゴ）
   slide-*-1536.webp / slide-*-768.webp   背景のスライドショー（design/slide-*.webp を縮める）
@@ -54,28 +54,50 @@ def icon_small(font):
 '''
 
 
+def adv(font, text):
+    cmap, hmtx = font.getBestCmap(), font["hmtx"]
+    return sum(hmtx[cmap[ord(c)]][0] for c in text)
+
+
 def logo_a(font):
-    k = text_path(font, "KONBINI", 160, 64, 40, width=236)
-    h = text_path(font, "24H", 160, 128, 40, width=96)
+    """横長のロゴ（案A）: 白い看板の KONBINI と、からし色の帯の 24H を同じ文字の大きさにする。"""
+    upm, cap = font["head"].unitsPerEm, font["OS/2"].sCapHeight
+    size = min(264 * upm / adv(font, "KONBINI"), 40 * upm / cap)   # 横幅264・文字の高さ40までに収まる大きさ
+    c = cap * size / upm
+    k = text_path(font, "KONBINI", 160, 45 + c / 2, size)        # 白い部分（10〜80）の真ん中
+    h = text_path(font, "24H", 160, 110 + c / 2, size)           # からし色の帯（80〜140）の真ん中
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 150" role="img" aria-label="KONBINI 24H">
 <rect x="10" y="10" width="300" height="130" rx="14" fill="#fff"/>
-<path d="M10 86h300v40a14 14 0 0 1-14 14H24a14 14 0 0 1-14-14z" fill="{MUSTARD}"/>
+<path d="M10 80h300v46a14 14 0 0 1-14 14H24a14 14 0 0 1-14-14z" fill="{MUSTARD}"/>
 <path d="{k}" fill="{INK}"/><path d="{h}" fill="{INK}"/>
 </svg>
 '''
 
 
-def icon(font):
-    k = text_path(font, "KONBINI", 256, 150, 64, width=330)
-    h = text_path(font, "24H", 256, 372, 200, width=400)
+def icon(font, fit=1.0):
+    """正方形のアイコン（案C）: 上の白い部分に KON / BINI、下のからし色の部分に 24H（横長のロゴと同じ2色）。
+    3段とも同じ文字の大きさで、アイコンに収まる範囲でいちばん大きく。BINI と 24H のあいだは少し広く開け、
+    そこで色を分ける。fit を 1 より小さくすると文字を小さくする（Android の丸く切り抜くアイコン用）。"""
+    upm, cap = font["head"].unitsPerEm, font["OS/2"].sCapHeight
+    g, b, pad = 0.28, 0.42, 0.30          # 段のあいだ・色の境目の上下・上下の余白（文字の高さに対して）
+    lines = ["KON", "BINI", "24H"]
+    c_by_h = 512 / (3 + g + 2 * b + 2 * pad)
+    c_by_w = 512 * 0.82 * cap / max(adv(font, t) for t in lines)
+    c = min(c_by_h, c_by_w) * fit
+    size = c * upm / cap
+    top = (512 - c * (3 + g + 2 * b)) / 2
+    base = [top + c, top + 2 * c + g * c, top + 3 * c + (g + 2 * b) * c]
+    split = top + 2 * c + (g + b) * c     # ここから下がからし色
+    paths = "".join(f'<path d="{text_path(font, t, 256, y, size)}" fill="{INK}"/>' for t, y in zip(lines, base))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="KONBINI 24H">
-<rect width="512" height="512" fill="{MUSTARD}"/>
-<path d="{k}" fill="{INK}"/><path d="{h}" fill="{INK}"/>
+<rect width="512" height="512" fill="#fff"/>
+<rect y="{split:.1f}" width="512" height="{512 - split:.1f}" fill="{MUSTARD}"/>
+{paths}
 </svg>
 '''
 
 
-def render_pngs(icon_svg, logo_svg, small_svg):
+def render_pngs(icon_svg, logo_svg, small_svg, maskable_svg):
     """アイコンと共有用の絵を、Node の Playwright（Chromium）で描いて保存する。"""
     import json
     import subprocess
@@ -84,9 +106,9 @@ def render_pngs(icon_svg, logo_svg, small_svg):
     jobs = []
     tmp = pathlib.Path(tempfile.mkdtemp())
     for name, size, pad in [("icon-512.png", 512, 0), ("icon-192.png", 192, 0), ("apple-touch-icon.png", 180, 0),
-                            ("favicon-32.png", 32, 0), ("icon-maskable-512.png", 512, 0.1)]:
+                            ("favicon-32.png", 32, 0), ("icon-maskable-512.png", 512, 0)]:
         inner = int(size * (1 - 2 * pad))
-        svg = small_svg if size <= 48 else icon_svg
+        svg = small_svg if size <= 48 else maskable_svg if "maskable" in name else icon_svg
         html = (f'<body style="margin:0;background:{MUSTARD};display:grid;place-items:center;'
                 f'width:{size}px;height:{size}px"><div style="width:{inner}px;height:{inner}px">'
                 + svg.replace("<svg ", f'<svg width="{inner}" height="{inner}" ') + "</div></body>")
@@ -128,7 +150,7 @@ def main():
     (OUT / "logo-a.svg").write_text(la, encoding="utf-8")
     (OUT / "icon.svg").write_text(ic, encoding="utf-8")
     slides()
-    render_pngs(ic, la, icon_small(font))
+    render_pngs(ic, la, icon_small(font), icon(font, fit=0.78))
     for f in sorted(OUT.iterdir()):
         print(f"{f.name}\t{f.stat().st_size // 1024} KB")
 

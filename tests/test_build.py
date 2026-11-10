@@ -62,6 +62,12 @@ class Build(unittest.TestCase):
         self.assertEqual(ld["numberOfItems"], self.info["videos"])
         self.assertEqual(ld["itemListElement"][0]["item"]["@type"], "VideoObject")
 
+    def test_newest_first(self):
+        page = self.read("ja/index.html")
+        dates = re.findall(r'<li class="card"[^>]*data-d="([0-9-]+)"', page)
+        self.assertEqual(dates, sorted(dates, reverse=True))
+        self.assertIn('data-s="new" aria-pressed="true"', page)
+
     def test_store_page_has_only_that_store(self):
         page = self.read("en/lawson/index.html")
         stores = re.findall(r'<div class="meta"><span>([^<]+)</span>', page)
