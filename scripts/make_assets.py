@@ -5,7 +5,7 @@
   SVG に入れるので、ページはフォントを読み込まない。
 作るもの（site/assets/）:
   logo-a.svg            ページ上部のロゴ（案A: 白い看板＋からし色の帯に 24H）
-  icon.svg              アイコン（案C: からし色の正方形、KONBINI と大きな 24H）
+  icon.svg              アイコン（案C: からし色の正方形に KON・BINI・24H の3段、同じ文字の大きさ）
   icon-*.png, apple-touch-icon.png, favicon-32.png, favicon.ico   アイコンの各サイズ（Playwright で描く）
   og.jpg                SNS で共有した時の絵（1200×630。東京の絵＋ロゴ）
   slide-*-1536.webp / slide-*-768.webp   背景のスライドショー（design/slide-*.webp を縮める）
@@ -54,23 +54,40 @@ def icon_small(font):
 '''
 
 
+def adv(font, text):
+    cmap, hmtx = font.getBestCmap(), font["hmtx"]
+    return sum(hmtx[cmap[ord(c)]][0] for c in text)
+
+
 def logo_a(font):
-    k = text_path(font, "KONBINI", 160, 64, 40, width=236)
-    h = text_path(font, "24H", 160, 128, 40, width=96)
+    """横長のロゴ（案A）: 白い看板の KONBINI と、からし色の帯の 24H を同じ文字の大きさにする。"""
+    upm, cap = font["head"].unitsPerEm, font["OS/2"].sCapHeight
+    size = min(264 * upm / adv(font, "KONBINI"), 40 * upm / cap)   # 横幅264・文字の高さ40までに収まる大きさ
+    c = cap * size / upm
+    k = text_path(font, "KONBINI", 160, 45 + c / 2, size)        # 白い部分（10〜80）の真ん中
+    h = text_path(font, "24H", 160, 110 + c / 2, size)           # からし色の帯（80〜140）の真ん中
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 150" role="img" aria-label="KONBINI 24H">
 <rect x="10" y="10" width="300" height="130" rx="14" fill="#fff"/>
-<path d="M10 86h300v40a14 14 0 0 1-14 14H24a14 14 0 0 1-14-14z" fill="{MUSTARD}"/>
+<path d="M10 80h300v46a14 14 0 0 1-14 14H24a14 14 0 0 1-14-14z" fill="{MUSTARD}"/>
 <path d="{k}" fill="{INK}"/><path d="{h}" fill="{INK}"/>
 </svg>
 '''
 
 
 def icon(font):
-    k = text_path(font, "KONBINI", 256, 150, 64, width=330)
-    h = text_path(font, "24H", 256, 372, 200, width=400)
+    """正方形のアイコン（案C）: KON / BINI / 24H の3段。3段とも同じ文字の大きさで、アイコンに収まる範囲でいちばん大きく。"""
+    upm, cap = font["head"].unitsPerEm, font["OS/2"].sCapHeight
+    lines = ["KON", "BINI", "24H"]
+    box = 512 * 0.82                       # 角の丸みで切れないよう、外側に少し余白
+    gap_ratio = 0.3                        # 段のあいだ（文字の高さに対して）
+    size = min(box * upm / max(adv(font, t) for t in lines), box * upm / (cap * (3 + 2 * gap_ratio)))
+    c = cap * size / upm
+    top = (512 - c * (3 + 2 * gap_ratio)) / 2
+    paths = "".join(f'<path d="{text_path(font, t, 256, top + c * (i + 1) + c * gap_ratio * i, size)}" fill="{INK}"/>'
+                    for i, t in enumerate(lines))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="KONBINI 24H">
 <rect width="512" height="512" fill="{MUSTARD}"/>
-<path d="{k}" fill="{INK}"/><path d="{h}" fill="{INK}"/>
+{paths}
 </svg>
 '''
 

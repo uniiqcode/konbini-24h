@@ -218,7 +218,8 @@ def js_strings(t):
 
 def render(template, site, langs, tags, t, videos, *, sub="", title, description, h1, lead, current_store=None,
            show_cats=True, cat_pages=(), visitors="", day):
-    videos = sorted(videos, key=lambda v: -v["views"])
+    # 最初の並びは新しい順（投稿日が同じなら再生数の多い順）。JavaScript の「新しい順」と同じ
+    videos = sorted(videos, key=lambda v: (v["published"], v["views"]), reverse=True)
     rel = page_url(t["path"], sub)
     figs, dots = hero(site, t)
     pages = ""
