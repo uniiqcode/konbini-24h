@@ -88,7 +88,7 @@ class Build(unittest.TestCase):
 
     def test_visitors_top10_and_others(self):
         page = self.read("ja/index.html")
-        self.assertIn("これまでの訪問者 1,234人（11月8日時点）", page)
+        self.assertIn("これまでの訪問者 1,234人（11月9日時点）", page)
         self.assertEqual(len(re.findall(r'<li data-cc="', page)), 10)
         self.assertIn("ほか 2か国", page)
 
