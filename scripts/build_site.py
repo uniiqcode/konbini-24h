@@ -9,7 +9,7 @@
   sitemap.xml、assets/、manifest.webmanifest
 検索エンジンが読めるよう、動画の一覧・タグ・構造化データ（ItemList＋VideoObject）を HTML に書き込む。
 絞り込み（食べ物の種類）と並べ替えは JavaScript で行う。店はページを分ける（リンク）。
-環境変数 GOATCOUNTER_TOKEN があれば、GoatCounter から前日までの訪問者数と国別の数を受け取って書く
+環境変数 GOATCOUNTER_TOKEN があれば、GoatCounter からページを作った時点までの訪問者数と国別の数を受け取って書く
 （受け取れない時は書かずにページを作る）。
 """
 import datetime
@@ -105,7 +105,7 @@ def visitors_html(t, stats, day):
     lis = "".join(f'<li data-cc="{e(c)}">{flag(c)} <span class="cn">{e(n)}</span> <b>{k:,}</b></li>' for c, n, k in shown)
     more = len(countries) - len(shown)
     others = f'<li class="others">{e(fmt(t["visitors_others"], n=more))}</li>' if more > 0 else ""
-    asof = day - datetime.timedelta(days=1)
+    asof = day   # ページを作った時点までの数なので、作った日の日付で書く
     ul = f'<ul class="countries">{lis}{others}</ul>' if shown else ""
     return f'<div class="visitors"><p>{e(fmt(t["visitors"], asof, n=f"{total:,}"))}</p>{ul}</div>'
 
