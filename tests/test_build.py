@@ -92,6 +92,12 @@ class Build(unittest.TestCase):
         self.assertEqual(len(re.findall(r'<li data-cc="', page)), 10)
         self.assertIn("ほか 2か国", page)
 
+    def test_previous_visitors_keep_their_date(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = pathlib.Path(d) / "_site"
+            build_site.build(out=out, stats=(50, [("JP", "Japan", 50)], datetime.date(2026, 11, 7)), day=DAY)
+            self.assertIn("これまでの訪問者 50人（11月7日時点）", (out / "ja/index.html").read_text(encoding="utf-8"))
+
     def test_no_visitors_when_not_available(self):
         with tempfile.TemporaryDirectory() as d:
             out = pathlib.Path(d) / "_site"
