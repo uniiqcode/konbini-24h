@@ -32,15 +32,18 @@ def get(endpoint, **params):
 
 
 def search(sources, days):
+    """検索のしかた（orders）ごとに、検索語を1ページずつ検索する。新しい順は date_days 日以内に絞る。"""
     yt = sources["youtube"]
-    after = (convini.now() - datetime.timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
     ids, units = [], 0
-    for group in yt["queries"]:
-        for q in group["q"]:
-            res = get("search", part="id", type="video", q=q, order=yt["order"], maxResults=yt["max_results"],
-                      videoDuration="short", publishedAfter=after, relevanceLanguage=group["lang"])
-            units += 100
-            ids += [i["id"]["videoId"] for i in res.get("items", []) if i["id"].get("videoId")]
+    for order in yt.get("orders", [yt.get("order", "viewCount")]):
+        span = yt.get("date_days", days) if order == "date" else days
+        after = (convini.now() - datetime.timedelta(days=span)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        for group in yt["queries"]:
+            for q in group["q"]:
+                res = get("search", part="id", type="video", q=q, order=order, maxResults=yt["max_results"],
+                          videoDuration="short", publishedAfter=after, relevanceLanguage=group["lang"])
+                units += 100
+                ids += [i["id"]["videoId"] for i in res.get("items", []) if i["id"].get("videoId")]
     return list(dict.fromkeys(ids)), units
 
 

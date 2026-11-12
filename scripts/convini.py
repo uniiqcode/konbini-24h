@@ -147,7 +147,12 @@ class Rules:
         if now() - published > datetime.timedelta(days=b["days"]):
             return "古い"
         if v.get("views", 0) < b["min_views"]:
-            return "再生数が少ない"
+            # 投稿されたばかりなら、1日あたりの再生数で見る
+            age_days = max((now() - published).total_seconds() / 86400, 1)
+            fresh = b.get("fresh_days") and age_days <= b["fresh_days"] and \
+                v.get("views", 0) / age_days >= b.get("fresh_views_per_day", float("inf"))
+            if not fresh:
+                return "再生数が少ない"
         store = self.store(title, desc)
         if store is None:
             return "コンビニの動画ではない"
