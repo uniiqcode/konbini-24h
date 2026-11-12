@@ -51,7 +51,7 @@ jobs:
             git checkout "origin/$DATA_BRANCH" -- data/visitors.json || true
           fi
 
-      - name: 集め直す（約2,400ユニット）
+      - name: 集め直す（約4,700ユニット）
         if: github.event_name != 'push'
         continue-on-error: true   # 集められなくても、これまでの結果でページは作る
         env:

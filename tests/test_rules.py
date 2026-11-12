@@ -90,6 +90,27 @@ class Tight(unittest.TestCase):
         self.assertEqual(R.category("ローソンの新しいやつ", "ガトーショコラを食べた"), "sweets")
 
 
+class Fresh(unittest.TestCase):
+    def test_new_video_with_momentum_is_accepted(self):
+        # 投稿3日で12万回（1日4万回）なら、30万回に届かなくても載せる
+        self.assertIsInstance(R.judge(video("セブンの新作アイス", views=120000, days_ago=3)), dict)
+
+    def test_new_video_without_momentum_is_rejected(self):
+        self.assertEqual(R.judge(video("セブンの新作アイス", views=50000, days_ago=3)), "再生数が少ない")
+
+    def test_foreign_language_has_lower_bar(self):
+        # 英語・韓国語・中国語は1日1,000回で載せる。日本語は3万回のまま
+        self.assertIsInstance(R.judge(video("Trying Japanese 7-Eleven ice cream", views=5000, days_ago=3)), dict)
+        self.assertIsInstance(R.judge(video("일본 편의점 아이스크림 추천", views=4000, days_ago=2)), dict)
+        self.assertIsInstance(R.judge(video("日本超商冰淇淋必買", views=3000, days_ago=2)), dict)
+        self.assertEqual(R.judge(video("セブンの新作アイス", views=5000, days_ago=3)), "再生数が少ない")
+        self.assertEqual(R.judge(video("Trying Japanese 7-Eleven ice cream", views=2000, days_ago=3)), "再生数が少ない")
+
+    def test_older_video_needs_min_views(self):
+        # 投稿20日なら、1日あたりが多くても30万回が必要
+        self.assertEqual(R.judge(video("セブンの新作アイス", views=290000, days_ago=20)), "再生数が少ない")
+
+
 class Tags(unittest.TestCase):
     def test_items_and_format(self):
         self.assertEqual(R.tags("【セブン】SNSで話題の新作アイス食べてみた正直な感想🍫"), ["icecream", "controversy"])
