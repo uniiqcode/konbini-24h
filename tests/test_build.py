@@ -105,6 +105,28 @@ class Build(unittest.TestCase):
             self.assertNotIn('class="visitors"', (out / "en/index.html").read_text(encoding="utf-8"))
 
 
+class Retry(unittest.TestCase):
+    def test_goatcounter_retries_on_temporary_404(self):
+        import io
+        import urllib.error
+        calls = []
+
+        def fake_urlopen(req, timeout=30):
+            calls.append(req.full_url)
+            if len(calls) == 1:
+                raise urllib.error.HTTPError(req.full_url, 404, "Not Found", {}, io.BytesIO(b'{"error":"not found"}'))
+            body = b'{"total": 7}' if "total" in req.full_url else b'{"stats": [{"id": "JP", "name": "Japan", "count": 7}]}'
+            return io.BytesIO(body)
+
+        real_open, real_sleep, real_waits = build_site.urllib.request.urlopen, build_site.time.sleep, build_site.RETRY_WAITS
+        build_site.urllib.request.urlopen, build_site.time.sleep, build_site.RETRY_WAITS = fake_urlopen, lambda s: None, [0, 0]
+        try:
+            site = {"goatcounter": "https://x.goatcounter.com", "count_from": "2026-11-08"}
+            self.assertEqual(build_site.goatcounter(site, "t", DAY), (7, [("JP", "Japan", 7)]))
+        finally:
+            build_site.urllib.request.urlopen, build_site.time.sleep, build_site.RETRY_WAITS = real_open, real_sleep, real_waits
+
+
 class Format(unittest.TestCase):
     def test_views(self):
         t = {"path": "ja", "views_large": "{v}億回", "views_mid": "{v}万回", "views_small": "{v}回"}

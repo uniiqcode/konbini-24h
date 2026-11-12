@@ -18,6 +18,7 @@ import json
 import os
 import shutil
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -26,6 +27,7 @@ import convini
 
 BASE = "/konbini-24h/"          # ページの中のリンクとファイルの場所（uniiqcode.com でも github.io でも同じ）
 OUT = convini.ROOT / "_site"
+RETRY_WAITS = [10, 30]                          # GoatCounter を取り直すまでの秒数
 VISITORS = convini.ROOT / "data/visitors.json"   # 最後に受け取れた訪問者数（受け取れない日に使う）
 STORE_SLUG = {"seven": "seven", "familymart": "familymart", "lawson": "lawson", "all": "multi"}
 STORES = ["seven", "familymart", "lawson", "all"]
@@ -67,11 +69,19 @@ def goatcounter(site, token, day):
     end = day.isoformat()
 
     def get(path, **params):
+        """GoatCounter はときどき一時的に 404 などを返すので、少し待って3回まで取り直す。"""
         q = urllib.parse.urlencode({"start": site["count_from"], "end": end, **params})
         req = urllib.request.Request(f'{site["goatcounter"]}/api/v0/{path}?{q}',
                                      headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            return json.load(r)
+        for attempt, wait in enumerate(RETRY_WAITS + [None]):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    return json.load(r)
+            except urllib.error.HTTPError as err:
+                if wait is None or err.code not in (404, 429, 500, 502, 503, 504):
+                    raise
+                print(f"{path}: {err.code}。{wait}秒待って取り直す（{attempt + 1}回目）", file=sys.stderr)
+                time.sleep(wait)
 
     try:
         total = int(get("stats/total")["total"])
