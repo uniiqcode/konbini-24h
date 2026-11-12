@@ -10,7 +10,7 @@
 検索エンジンが読めるよう、動画の一覧・タグ・構造化データ（ItemList＋VideoObject）を HTML に書き込む。
 絞り込み（食べ物の種類）と並べ替えは JavaScript で行う。店はページを分ける（リンク）。
 環境変数 GOATCOUNTER_TOKEN があれば、GoatCounter からページを作った時点までの訪問者数と国別の数を受け取って書く
-（受け取れない時は書かずにページを作る）。
+（受け取れない時は、前回受け取れた数 data/visitors.json をその日付のまま書く。それもなければ書かない）。
 """
 import datetime
 import html
@@ -18,6 +18,7 @@ import json
 import os
 import shutil
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -26,6 +27,8 @@ import convini
 
 BASE = "/konbini-24h/"          # ページの中のリンクとファイルの場所（uniiqcode.com でも github.io でも同じ）
 OUT = convini.ROOT / "_site"
+RETRY_WAITS = [10, 30]                          # GoatCounter を取り直すまでの秒数
+VISITORS = convini.ROOT / "data/visitors.json"   # 最後に受け取れた訪問者数（受け取れない日に使う）
 STORE_SLUG = {"seven": "seven", "familymart": "familymart", "lawson": "lawson", "all": "multi"}
 STORES = ["seven", "familymart", "lawson", "all"]
 CATEGORIES = ["rice", "bread", "hotsnack", "sweets", "snack", "drink", "mixed"]
@@ -66,11 +69,19 @@ def goatcounter(site, token, day):
     end = day.isoformat()
 
     def get(path, **params):
+        """GoatCounter はときどき一時的に 404 などを返すので、少し待って3回まで取り直す。"""
         q = urllib.parse.urlencode({"start": site["count_from"], "end": end, **params})
         req = urllib.request.Request(f'{site["goatcounter"]}/api/v0/{path}?{q}',
                                      headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            return json.load(r)
+        for attempt, wait in enumerate(RETRY_WAITS + [None]):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    return json.load(r)
+            except urllib.error.HTTPError as err:
+                if wait is None or err.code not in (404, 429, 500, 502, 503, 504):
+                    raise
+                print(f"{path}: {err.code}。{wait}秒待って取り直す（{attempt + 1}回目）", file=sys.stderr)
+                time.sleep(wait)
 
     try:
         total = int(get("stats/total")["total"])
@@ -100,12 +111,13 @@ def flag(code):
 def visitors_html(t, stats, day):
     if not stats:
         return ""
-    total, countries = stats
+    total, countries = stats[0], stats[1]
     shown = countries[:10]
     lis = "".join(f'<li data-cc="{e(c)}">{flag(c)} <span class="cn">{e(n)}</span> <b>{k:,}</b></li>' for c, n, k in shown)
     more = len(countries) - len(shown)
     others = f'<li class="others">{e(fmt(t["visitors_others"], n=more))}</li>' if more > 0 else ""
-    asof = day   # ページを作った時点までの数なので、作った日の日付で書く
+    # ページを作った時点までの数なので、作った日の日付で書く。前回の数を使う時はその日の日付
+    asof = stats[2] if len(stats) > 2 else day
     ul = f'<ul class="countries">{lis}{others}</ul>' if shown else ""
     return f'<div class="visitors"><p>{e(fmt(t["visitors"], asof, n=f"{total:,}"))}</p>{ul}</div>'
 
@@ -392,6 +404,13 @@ def main():
     day = today_jst()
     token = os.environ.get("GOATCOUNTER_TOKEN")
     stats = goatcounter(cfg["site"], token, day) if token else None
+    if stats:   # 受け取れた数を残しておく（data ブランチに記録される）
+        convini.save_json(VISITORS, {"date": day.isoformat(), "total": stats[0], "countries": [list(c) for c in stats[1]]})
+    else:       # 受け取れない日は、前回受け取れた数をその日付のまま出す（表示が消えないように）
+        cache = convini.load_json(VISITORS, None)
+        if cache:
+            stats = (cache["total"], [tuple(c) for c in cache["countries"]], datetime.date.fromisoformat(cache["date"]))
+            print(f'前回（{cache["date"]}）の訪問者数を使う', file=sys.stderr)
     info = build(stats=stats, day=day)
     print(f'_site を作った: 動画 {info["videos"]}本、1言語あたり {info["pages_per_lang"]}ページ'
           f'（分類のページ: {", ".join(info["category_pages"]) or "なし"}）、訪問者数: {"あり" if stats else "なし"}')

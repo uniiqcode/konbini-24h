@@ -1,5 +1,5 @@
 # 毎朝、YouTube から動画を集め直し、ページを作って GitHub Pages に公開する（PR は作らない。自動で反映）。
-# 集めた結果（data/videos.json・data/candidates.json）は main ではなく data ブランチに記録する。
+# 集めた結果（data/videos.json・data/candidates.json）と訪問者数（data/visitors.json）は main ではなく data ブランチに記録する。
 # main のページ・設定・スクリプトが変わった時は、集め直さずにページだけ作り直す（data ブランチの結果を使う）。
 name: 毎日の更新と公開
 
@@ -48,6 +48,7 @@ jobs:
           if git ls-remote --exit-code --heads origin "$DATA_BRANCH" >/dev/null; then
             git fetch origin "$DATA_BRANCH"
             git checkout "origin/$DATA_BRANCH" -- data/videos.json data/candidates.json || true
+            git checkout "origin/$DATA_BRANCH" -- data/visitors.json || true
           fi
 
       - name: 集め直す（約2,400ユニット）
@@ -57,8 +58,12 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python3 scripts/collect.py
 
-      - name: 集めた結果を data ブランチに記録する
-        if: github.event_name != 'push'
+      - name: ページを作る
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}   # 訪問者数を受け取るため（読むだけの権限）
+        run: python3 scripts/build_site.py
+
+      - name: 集めた結果と訪問者数を data ブランチに記録する
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -70,16 +75,12 @@ jobs:
           fi
           mkdir -p "$D/data"
           cp data/videos.json data/candidates.json "$D/data/"
+          if [ -f data/visitors.json ]; then cp data/visitors.json "$D/data/"; fi
           cd "$D"
           git add data
           if git diff --cached --quiet; then echo "変わったところはない"; exit 0; fi
-          git commit -m "毎日の収集 $(TZ=Asia/Tokyo date +%F)"
+          git commit -m "毎日の記録 $(TZ=Asia/Tokyo date +%F)"
           git push origin "$DATA_BRANCH"
-
-      - name: ページを作る
-        env:
-          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}   # 訪問者数を受け取るため（読むだけの権限）
-        run: python3 scripts/build_site.py
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
