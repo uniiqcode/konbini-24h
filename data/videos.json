@@ -1,42 +1,42 @@
 {
  "summary": {
-  "updated": "2026-11-12T02:00:05Z",
-  "units": 2317,
-  "searched": 822,
-  "checked": 836,
-  "kept": 86,
+  "updated": "2026-11-13T01:28:25Z",
+  "units": 4630,
+  "searched": 1446,
+  "checked": 1456,
+  "kept": 126,
   "dropped": {
-   "再生数が少ない": 578,
-   "コンビニの動画ではない": 46,
-   "同じチャンネルの上限": 40,
-   "長い": 22,
-   "未分類": 16,
-   "公式チャンネル": 16,
-   "日本の話か分からない": 15,
-   "食品ではない": 12,
+   "再生数が少ない": 1092,
+   "コンビニの動画ではない": 74,
+   "同じチャンネルの上限": 44,
+   "未分類": 38,
+   "長い": 32,
+   "食品ではない": 19,
+   "日本の話か分からない": 18,
+   "公式チャンネル": 9,
    "除外の言葉": 3,
-   "人が外した": 1,
-   "古い": 1
+   "人が外した": 1
   },
   "by_store": {
-   "seven": 25,
-   "all": 25,
-   "lawson": 23,
-   "familymart": 13
+   "seven": 41,
+   "all": 41,
+   "lawson": 27,
+   "familymart": 17
   },
   "by_category": {
-   "mixed": 33,
-   "rice": 32,
-   "sweets": 10,
-   "bread": 4,
-   "snack": 3,
-   "hotsnack": 2,
-   "drink": 2
+   "mixed": 49,
+   "rice": 37,
+   "sweets": 15,
+   "drink": 10,
+   "snack": 8,
+   "bread": 5,
+   "hotsnack": 2
   },
   "by_lang": {
-   "ja": 63,
-   "en": 12,
-   "ko": 8,
+   "ja": 69,
+   "en": 26,
+   "ko": 23,
+   "zh": 5,
    "es": 3
   }
  },
@@ -46,7 +46,7 @@
    "title": "Un-Meltable Chocolate vs Japan's Viral Convenience Store @TokyoLAGirly #familymart #konbini #japan",
    "channel": "Tyler Morgan - Japan Adventures",
    "published": "2026-09-13",
-   "views": 11752641,
+   "views": 12007133,
    "seconds": 63,
    "store": "familymart",
    "category": "mixed",
@@ -62,7 +62,7 @@
    "title": "フランス彼女に人生初冷凍たこ焼食べさせた結果w #セブンイレブン",
    "channel": "天然彼女エヴァちゃん",
    "published": "2026-08-18",
-   "views": 10684170,
+   "views": 10684980,
    "seconds": 59,
    "store": "seven",
    "category": "hotsnack",
@@ -77,7 +77,7 @@
    "title": "Masti time in japan #relatable #comedy #7eleven #ramen #funny #food",
    "channel": "Niswoman",
    "published": "2026-10-02",
-   "views": 5820629,
+   "views": 5851845,
    "seconds": 109,
    "store": "seven",
    "category": "rice",
@@ -92,7 +92,7 @@
    "title": "「人間の尊厳が傷つけられている」と大炎上したこのローソンのぼだっこ弁当が本当に美味しいのか料理研究家がジャッジします #リュウジ #ローソン #炎上 #コンビニ #弁当 #レビュー #バズレシピ",
    "channel": "料理研究家リュウジのバズレシピ",
    "published": "2026-09-28",
-   "views": 5597039,
+   "views": 5611398,
    "seconds": 62,
    "store": "lawson",
    "category": "rice",
@@ -108,7 +108,7 @@
    "title": "しょっぱすぎて海水飲んでるみたいって言われてるセブンイレブンのコショウそば。料理研究家が本気でまずいのかどうか言います。 #リュウジ #コンビニ  #ラーメン #レビュー #バズレシピ",
    "channel": "料理研究家リュウジのバズレシピ",
    "published": "2026-09-01",
-   "views": 4517848,
+   "views": 4530135,
    "seconds": 63,
    "store": "seven",
    "category": "rice",
@@ -125,7 +125,7 @@
    "title": "Only eating convenience store food hacks! #JapanFood #japan  #TokyoFood #ConvenienceStore #noodles",
    "channel": "KarissaEats",
    "published": "2026-09-29",
-   "views": 2728431,
+   "views": 2737574,
    "seconds": 97,
    "store": "all",
    "category": "mixed",
@@ -141,7 +141,7 @@
    "title": "human made x cup noodles collab! at the japanese convenience store",
    "channel": "cindythi",
    "published": "2026-09-19",
-   "views": 2599809,
+   "views": 2640141,
    "seconds": 24,
    "store": "all",
    "category": "mixed",
@@ -153,11 +153,26 @@
    ]
   },
   {
+   "id": "jdfMgmxUfog",
+   "title": "I tried to make a mukbang video in a Japanese convenience store....",
+   "channel": "Japan Eat",
+   "published": "2026-09-16",
+   "views": 2424870,
+   "seconds": 78,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "bigeat"
+   ]
+  },
+  {
    "id": "bAA5fBCwzLo",
    "title": "セブンイレブンから新発売の冷やしラーメン、大炎上→もはや保健所案件ではと話題 #2chまとめ",
    "channel": "気になるネット民まとめちゃん",
    "published": "2026-08-25",
-   "views": 2423149,
+   "views": 2423265,
    "seconds": 52,
    "store": "seven",
    "category": "rice",
@@ -169,26 +184,11 @@
    ]
   },
   {
-   "id": "jdfMgmxUfog",
-   "title": "I tried to make a mukbang video in a Japanese convenience store....",
-   "channel": "Japan Eat",
-   "published": "2026-09-16",
-   "views": 2417737,
-   "seconds": 78,
-   "store": "all",
-   "category": "mixed",
-   "group": "food",
-   "lang": "en",
-   "tags": [
-    "bigeat"
-   ]
-  },
-  {
    "id": "byhDROxmwWg",
    "title": "ローソンで気まぐれクック監修フェア！炎上中の「蟹味噌香る！あんかけ炒飯を含む7品」を正直レビュー！#コンビニ新作",
    "channel": "正直レビュー ",
    "published": "2026-10-24",
-   "views": 2341987,
+   "views": 2360895,
    "seconds": 72,
    "store": "lawson",
    "category": "rice",
@@ -205,7 +205,7 @@
    "title": "【セブン】SNSで話題の新作アイス食べてみた正直な感想🍫 #shorts #セブンイレブン",
    "channel": "せこまる食堂",
    "published": "2026-08-28",
-   "views": 2315540,
+   "views": 2315607,
    "seconds": 147,
    "store": "seven",
    "category": "sweets",
@@ -217,11 +217,26 @@
    ]
   },
   {
+   "id": "qrTo81Lsw3s",
+   "title": "【ファミリーマート】本気のチョコを本気で楽しむぞ！ #グルメ #ファミリーマート",
+   "channel": "バーキン君",
+   "published": "2026-10-31",
+   "views": 2106547,
+   "seconds": 78,
+   "store": "familymart",
+   "category": "snack",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "chocolate"
+   ]
+  },
+  {
    "id": "Yf68_UkUD8k",
    "title": "7 eleven snack review in Japan! #japan #tokyo #eating #foodie #shorts #7eleven",
    "channel": "KarissaEats",
    "published": "2026-10-08",
-   "views": 1893984,
+   "views": 1910192,
    "seconds": 82,
    "store": "seven",
    "category": "snack",
@@ -237,7 +252,7 @@
    "title": "ソーセージをバカほど乗せて大炎上したローソンのこのソーセージ一点盛り弁当、本当に美味しいのか料理研究家がジャッジします #リュウジ #ローソン #ソーセージ #弁当 #コンビニ #レビュー",
    "channel": "料理研究家リュウジのバズレシピ",
    "published": "2026-09-30",
-   "views": 1887809,
+   "views": 1892870,
    "seconds": 62,
    "store": "lawson",
    "category": "rice",
@@ -254,7 +269,7 @@
    "title": "【ファミマ】SNSで話題の本気のチョコパン全部食べた正直な感想🍫 #shorts",
    "channel": "せこまる食堂",
    "published": "2026-10-23",
-   "views": 1886141,
+   "views": 1889331,
    "seconds": 121,
    "store": "familymart",
    "category": "mixed",
@@ -271,7 +286,7 @@
    "title": "【ファミリーマート】名作が多すぎるコラボ祭が開催されたぞ！ #グルメ #ファミリーマート",
    "channel": "バーキン君",
    "published": "2026-09-03",
-   "views": 1855198,
+   "views": 1855969,
    "seconds": 87,
    "store": "familymart",
    "category": "mixed",
@@ -286,7 +301,7 @@
    "title": "【ファミリーマート】ネットで話題の商品４品！お気に入り発見！ #グルメ #ファミリーマート",
    "channel": "バーキン君",
    "published": "2026-10-29",
-   "views": 1807060,
+   "views": 1817759,
    "seconds": 88,
    "store": "familymart",
    "category": "mixed",
@@ -301,7 +316,7 @@
    "title": "【セブンイレブン】ネットをざわつかせた商品３品 #グルメ #セブンイレブン",
    "channel": "バーキン君",
    "published": "2026-08-25",
-   "views": 1779143,
+   "views": 1779893,
    "seconds": 68,
    "store": "seven",
    "category": "mixed",
@@ -316,7 +331,7 @@
    "title": "【セブンイレブン】神商品とヤバ商品〜最強ビリヤニと本格ミント〜 #グルメ #セブンイレブン",
    "channel": "バーキン君",
    "published": "2026-08-28",
-   "views": 1741485,
+   "views": 1743488,
    "seconds": 69,
    "store": "seven",
    "category": "rice",
@@ -331,7 +346,7 @@
    "title": "英国人が日本のコンビニ朝食を食べた結果…たまごサンドで大 reverse！🇬🇧🇯🇵",
    "channel": "ニッポンの物語",
    "published": "2026-09-09",
-   "views": 1701766,
+   "views": 1702543,
    "seconds": 64,
    "store": "all",
    "category": "bread",
@@ -344,26 +359,11 @@
    ]
   },
   {
-   "id": "NKM4r7ixgxo",
-   "title": "【セブンイレブン】ざわつく商品２品をご紹介します！ #グルメ #セブンイレブン",
-   "channel": "バーキン君",
-   "published": "2026-10-03",
-   "views": 1691497,
-   "seconds": 62,
-   "store": "seven",
-   "category": "mixed",
-   "group": "food",
-   "lang": "ja",
-   "tags": [
-    "controversy"
-   ]
-  },
-  {
    "id": "EJc8X5FRcEo",
    "title": "料理研究家リュウジ監修ファミマ商品を正直レビュー！(ポテサラは売切れで4店舗回っても買えませんでした)",
    "channel": "正直レビュー ",
    "published": "2026-10-27",
-   "views": 1609373,
+   "views": 1650550,
    "seconds": 76,
    "store": "familymart",
    "category": "mixed",
@@ -374,11 +374,28 @@
    ]
   },
   {
+   "id": "6V0tDZV9a98",
+   "title": "今話題のローソンの蟹味噌あんかけチャーハンを食べるYouTuber達の反応がこちら#井たくま#りゅうじ#高須幹弥#きまぐれクック#蟹味噌あんかけチャーハン",
+   "channel": "につんちゃんねる / Nitun",
+   "published": "2026-10-26",
+   "views": 1622974,
+   "seconds": 57,
+   "store": "lawson",
+   "category": "rice",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "friedrice",
+    "crab",
+    "controversy"
+   ]
+  },
+  {
    "id": "OEyvCZ2tNIE",
    "title": "こんなんで飯食えるわけねえだろとめちゃくちゃ炎上してるこのローソンの一点突破とうもろこし弁当が本当に美味しいのか料理研究家がジャッジします #リュウジ #ローソン #炎上 #弁当 #レビュー",
    "channel": "料理研究家リュウジのバズレシピ",
    "published": "2026-10-02",
-   "views": 1537862,
+   "views": 1538486,
    "seconds": 61,
    "store": "lawson",
    "category": "rice",
@@ -395,7 +412,7 @@
    "title": "【セブン】SNSで話題の新商品食べてみた正直な感想🌝 #shorts #セブンイレブン",
    "channel": "せこまる食堂",
    "published": "2026-09-20",
-   "views": 1534128,
+   "views": 1535902,
    "seconds": 167,
    "store": "seven",
    "category": "mixed",
@@ -406,28 +423,11 @@
    ]
   },
   {
-   "id": "6V0tDZV9a98",
-   "title": "今話題のローソンの蟹味噌あんかけチャーハンを食べるYouTuber達の反応がこちら#井たくま#りゅうじ#高須幹弥#きまぐれクック#蟹味噌あんかけチャーハン",
-   "channel": "につんちゃんねる / Nitun",
-   "published": "2026-10-26",
-   "views": 1466959,
-   "seconds": 57,
-   "store": "lawson",
-   "category": "rice",
-   "group": "food",
-   "lang": "ja",
-   "tags": [
-    "friedrice",
-    "crab",
-    "controversy"
-   ]
-  },
-  {
    "id": "Uoew7bTeBT0",
    "title": "セブンイレブンがゴリ押ししてた韓国発の新商品、全く売れず終わる",
    "channel": "気になるネット民まとめちゃん",
    "published": "2026-10-16",
-   "views": 1464867,
+   "views": 1475838,
    "seconds": 51,
    "store": "seven",
    "category": "mixed",
@@ -442,7 +442,7 @@
    "title": "【正直レビュー】しょっぱすぎると話題のセブン新商品「冷やしコショウそば」を検証",
    "channel": "SUSURU TV.",
    "published": "2026-08-28",
-   "views": 1393907,
+   "views": 1394734,
    "seconds": 30,
    "store": "seven",
    "category": "rice",
@@ -458,7 +458,7 @@
    "title": "ローソンのコンビニ弁当があまりにシンプル過ぎてエグいwwwwww",
    "channel": "はじめしゃちょー（hajime）",
    "published": "2026-09-27",
-   "views": 1346884,
+   "views": 1348641,
    "seconds": 106,
    "store": "lawson",
    "category": "rice",
@@ -473,7 +473,7 @@
    "title": "小中で激太りしたローソン商品爆食🐷🏪",
    "channel": "ひつじ⌇かぶりつきごはん",
    "published": "2026-09-03",
-   "views": 1313639,
+   "views": 1317286,
    "seconds": 71,
    "store": "lawson",
    "category": "mixed",
@@ -488,7 +488,7 @@
    "title": "일본 편의점에서 먹고 놀란 아이스크림",
    "channel": "공간 탐닉 Space Tamnik",
    "published": "2026-09-26",
-   "views": 1264704,
+   "views": 1267092,
    "seconds": 38,
    "store": "all",
    "category": "sweets",
@@ -503,7 +503,7 @@
    "title": "これで悩みが解決する　 #コンビニ #新商品#ファミマ",
    "channel": "勉強メシの時間",
    "published": "2026-09-24",
-   "views": 1254072,
+   "views": 1254276,
    "seconds": 22,
    "store": "familymart",
    "category": "mixed",
@@ -514,11 +514,27 @@
    ]
   },
   {
+   "id": "1cU-aE8emSY",
+   "title": "일본 편의점에서 발견한 말차 치즈케이크",
+   "channel": "공간 탐닉 Space Tamnik",
+   "published": "2026-11-05",
+   "views": 1250460,
+   "seconds": 21,
+   "store": "all",
+   "category": "sweets",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "cake",
+    "matcha"
+   ]
+  },
+  {
    "id": "QNqXbprhkJ4",
    "title": "ローソンからAIが考えた商品が発売されたぞ！社長ならAIか人間かなんて分かるでしょ",
    "channel": "くらっし社長-株式会社MIRACALE",
    "published": "2026-10-10",
-   "views": 1240161,
+   "views": 1240498,
    "seconds": 89,
    "store": "lawson",
    "category": "mixed",
@@ -533,7 +549,7 @@
    "title": "コンビニおにぎり、値下げするも批判殺到w",
    "channel": "もふもふ裏話",
    "published": "2026-08-24",
-   "views": 1234307,
+   "views": 1234952,
    "seconds": 54,
    "store": "all",
    "category": "rice",
@@ -548,7 +564,7 @@
    "title": "【コンビニ】SNSで話題の新作アイス食べてみた正直な感想🍨 #shorts #conveniencestore",
    "channel": "せこまる食堂",
    "published": "2026-09-15",
-   "views": 1176324,
+   "views": 1177014,
    "seconds": 167,
    "store": "all",
    "category": "sweets",
@@ -560,27 +576,11 @@
    ]
   },
   {
-   "id": "1cU-aE8emSY",
-   "title": "일본 편의점에서 발견한 말차 치즈케이크",
-   "channel": "공간 탐닉 Space Tamnik",
-   "published": "2026-11-05",
-   "views": 1172905,
-   "seconds": 21,
-   "store": "all",
-   "category": "sweets",
-   "group": "food",
-   "lang": "ko",
-   "tags": [
-    "cake",
-    "matcha"
-   ]
-  },
-  {
    "id": "k4cHE8HiFC4",
    "title": "【セブン】SNSで話題の新作スイーツ食べてみた正直な感想🍫 #shorts #セブンイレブン",
    "channel": "せこまる食堂",
    "published": "2026-09-30",
-   "views": 1112458,
+   "views": 1112823,
    "seconds": 167,
    "store": "seven",
    "category": "sweets",
@@ -595,7 +595,7 @@
    "title": "コンビニでこの美味しさなの！？アメリカ人夫婦が鮭おにぎりに驚愕！ #short #外国人のリアクション #日本観光 #日本グルメ #海外の反応",
    "channel": "世界が見たニッポンの凄さ",
    "published": "2026-09-21",
-   "views": 1080823,
+   "views": 1087944,
    "seconds": 93,
    "store": "all",
    "category": "mixed",
@@ -608,27 +608,11 @@
    ]
   },
   {
-   "id": "Hsuwvb2d-3Q",
-   "title": "モモ流ローソンパンアレンジに全員ハマる！",
-   "channel": "Kアイドルランド",
-   "published": "2026-08-21",
-   "views": 1045262,
-   "seconds": 28,
-   "store": "lawson",
-   "category": "bread",
-   "group": "food",
-   "lang": "ja",
-   "tags": [
-    "bread",
-    "recipe"
-   ]
-  },
-  {
    "id": "6xoTO8Hc084",
    "title": "일본 편의점 초콜릿 아이스크림 1등, 이것",
    "channel": "공간 탐닉 Space Tamnik",
    "published": "2026-10-22",
-   "views": 1044494,
+   "views": 1051050,
    "seconds": 17,
    "store": "all",
    "category": "mixed",
@@ -641,11 +625,27 @@
    ]
   },
   {
+   "id": "Hsuwvb2d-3Q",
+   "title": "モモ流ローソンパンアレンジに全員ハマる！",
+   "channel": "Kアイドルランド",
+   "published": "2026-08-21",
+   "views": 1045901,
+   "seconds": 28,
+   "store": "lawson",
+   "category": "bread",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "bread",
+    "recipe"
+   ]
+  },
+  {
    "id": "AGcSKY8-A5I",
    "title": "【コメント返し】臭いと感じる人は蟹味噌が嫌い？ローソン×きまぐれクック監修 蟹味噌香る！あんかけ炒飯への意見に正直レビュー！",
    "channel": "正直レビュー ",
    "published": "2026-10-25",
-   "views": 908968,
+   "views": 914002,
    "seconds": 62,
    "store": "lawson",
    "category": "rice",
@@ -662,7 +662,7 @@
    "title": "ローソンが300円以下の弁当シリーズ発表　「とうもろこしのみ」も…“消費の二極化”に対応｜TBS NEWS DIG",
    "channel": "TBS NEWS DIG Powered by JNN",
    "published": "2026-09-16",
-   "views": 899557,
+   "views": 899669,
    "seconds": 125,
    "store": "lawson",
    "category": "rice",
@@ -679,7 +679,7 @@
    "title": "Only Eating Food From a Japanese Convenience Store!",
    "channel": "Koreanosh",
    "published": "2026-08-15",
-   "views": 799815,
+   "views": 800900,
    "seconds": 59,
    "store": "all",
    "category": "mixed",
@@ -694,7 +694,7 @@
    "title": "レディー・ガガがファミマ店員に！？まさかの“ファミチキ”経験も「オイシイ！」　ファミリーマート新CM「ファミマではたらく？」篇",
    "channel": "oricon",
    "published": "2026-09-24",
-   "views": 778533,
+   "views": 778850,
    "seconds": 156,
    "store": "familymart",
    "category": "mixed",
@@ -705,11 +705,24 @@
    ]
   },
   {
+   "id": "vIHuAz3lwus",
+   "title": "what i didn't post at the convenience stores! japan + korea",
+   "channel": "cindythi",
+   "published": "2026-09-21",
+   "views": 760807,
+   "seconds": 32,
+   "store": "all",
+   "category": "drink",
+   "group": "food",
+   "lang": "en",
+   "tags": []
+  },
+  {
    "id": "UUuALUv1fos",
    "title": "セブンイレブンの神アイス「銀座千疋屋監修 まるで和栗モンブラン」と「まるで蜜芋」を正直レビュー！",
    "channel": "正直レビュー ",
    "published": "2026-10-06",
-   "views": 754245,
+   "views": 755478,
    "seconds": 65,
    "store": "seven",
    "category": "sweets",
@@ -722,24 +735,11 @@
    ]
   },
   {
-   "id": "vIHuAz3lwus",
-   "title": "what i didn't post at the convenience stores! japan + korea",
-   "channel": "cindythi",
-   "published": "2026-09-21",
-   "views": 750842,
-   "seconds": 32,
-   "store": "all",
-   "category": "drink",
-   "group": "food",
-   "lang": "en",
-   "tags": []
-  },
-  {
    "id": "XSBhiZuD4mE",
    "title": "推し活って欲張るとこうなる😭😭😭# #sanrio #サンリオ#ハローキティ #推し活 # #コンビニ # #vlog #ol #一人暮らし #会社員 #新作 #購入品紹介 #セブンイレブン",
    "channel": "かわいいすし♡ | ときめくものに囲まれたい",
    "published": "2026-09-30",
-   "views": 743032,
+   "views": 744775,
    "seconds": 34,
    "store": "seven",
    "category": "mixed",
@@ -754,7 +754,7 @@
    "title": "일본 편의점에서 먹고 놀란 푸딩",
    "channel": "공간 탐닉 Space Tamnik",
    "published": "2026-10-03",
-   "views": 731897,
+   "views": 733730,
    "seconds": 23,
    "store": "all",
    "category": "sweets",
@@ -769,7 +769,7 @@
    "title": "娘と炎上中のローソン蟹味噌香る！あんかけ炒飯食べてみた #shorts",
    "channel": "かの/カノックスター",
    "published": "2026-10-26",
-   "views": 712289,
+   "views": 717923,
    "seconds": 56,
    "store": "lawson",
    "category": "rice",
@@ -786,7 +786,7 @@
    "title": "セブンイレブン SNSで話題の商品5選 #モッパン #飯テロ #セブンイレブン #asmr #mukbang",
    "channel": "ryoma ASMR",
    "published": "2026-08-27",
-   "views": 709889,
+   "views": 712644,
    "seconds": 122,
    "store": "seven",
    "category": "bread",
@@ -801,7 +801,7 @@
    "title": "ローソンのぼだっこ弁当があまりにしょっぱくなくて全然美味しくなかったのでリュウジが甘塩鮭でぼだっこ風作りました #リュウジ #ローソン #弁当 #再現 #レシピ #料理 #バズレシピ",
    "channel": "料理研究家リュウジのバズレシピ",
    "published": "2026-10-04",
-   "views": 696345,
+   "views": 699399,
    "seconds": 62,
    "store": "lawson",
    "category": "rice",
@@ -818,7 +818,7 @@
    "title": "ファミリーマート9/15発売開始「歴史を刻め」監修の豚ラーメンがパワーアップして帰ってきた #ラーメン #ラーメン食べたい #グルメ",
    "channel": "らぁ麺が好きすぎる人🍜(ゆーき)",
    "published": "2026-09-16",
-   "views": 696274,
+   "views": 696700,
    "seconds": 67,
    "store": "familymart",
    "category": "rice",
@@ -835,7 +835,7 @@
    "title": "おかずはコーンのみ!!ローソン下級弁当(297円)がやべえ!#ドラゴンボール  #ローソン",
    "channel": "【非公式】ドラゴンボールでニュース解説",
    "published": "2026-09-18",
-   "views": 677869,
+   "views": 677892,
    "seconds": 61,
    "store": "lawson",
    "category": "rice",
@@ -852,7 +852,7 @@
    "title": "Can you finish this MASSIVE pasta from Japanese 7-Eleven?",
    "channel": "Japan Eat",
    "published": "2026-09-23",
-   "views": 628965,
+   "views": 631329,
    "seconds": 59,
    "store": "seven",
    "category": "rice",
@@ -864,11 +864,26 @@
    ]
   },
   {
+   "id": "QY6HVxBfjlY",
+   "title": "ファミマのリュウジ監修商品を食べました",
+   "channel": "ryoma ASMR",
+   "published": "2026-10-30",
+   "views": 629671,
+   "seconds": 139,
+   "store": "familymart",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "collab"
+   ]
+  },
+  {
    "id": "Sdmt-nSb5so",
    "title": "英国人が初めての日本のセブンで朝ビール！670円の朝ごはんが…",
    "channel": "ニッポンの物語",
    "published": "2026-10-09",
-   "views": 621348,
+   "views": 628882,
    "seconds": 53,
    "store": "seven",
    "category": "drink",
@@ -885,7 +900,7 @@
    "title": "英国人がファミマで5ポンド朝ごはん！おにぎりを「寿司」と呼んで怒られた結果w",
    "channel": "ニッポンの物語",
    "published": "2026-10-07",
-   "views": 616326,
+   "views": 616366,
    "seconds": 41,
    "store": "familymart",
    "category": "rice",
@@ -898,18 +913,18 @@
    ]
   },
   {
-   "id": "QY6HVxBfjlY",
-   "title": "ファミマのリュウジ監修商品を食べました",
+   "id": "pM9iP9sRQZk",
+   "title": "【セブンイレブン】攻めすぎ商品5選 正直レビュー",
    "channel": "ryoma ASMR",
-   "published": "2026-10-30",
-   "views": 606347,
-   "seconds": 139,
-   "store": "familymart",
+   "published": "2026-11-09",
+   "views": 594574,
+   "seconds": 128,
+   "store": "seven",
    "category": "mixed",
    "group": "food",
    "lang": "ja",
    "tags": [
-    "collab"
+    "ranking"
    ]
   },
   {
@@ -917,7 +932,7 @@
    "title": "【新作】今日からセブンの「ラーメンフェア」全8品販売開始！美味しかったランキング！！",
    "channel": "ハットリは回転寿司厨",
    "published": "2026-10-28",
-   "views": 576578,
+   "views": 577743,
    "seconds": 180,
    "store": "seven",
    "category": "rice",
@@ -929,27 +944,11 @@
    ]
   },
   {
-   "id": "UNIym8GkNps",
-   "title": "生チョコマシュマロ食べながらコメント返信 #ローソン #チョコマシュマロ",
-   "channel": "けべ",
-   "published": "2026-08-24",
-   "views": 572193,
-   "seconds": 35,
-   "store": "lawson",
-   "category": "snack",
-   "group": "food",
-   "lang": "ja",
-   "tags": [
-    "chocolate",
-    "marshmallow"
-   ]
-  },
-  {
    "id": "jOLectjGlPE",
    "title": "すき家とん汁みそらーめん SUSURU TV北ノ醤油ラーメンローソン肉づくし豚ラーメン#モッパン #飯テロ #ラーメン #mukbang",
    "channel": "ryoma ASMR",
    "published": "2026-10-04",
-   "views": 572073,
+   "views": 574750,
    "seconds": 129,
    "store": "lawson",
    "category": "mixed",
@@ -962,11 +961,43 @@
    ]
   },
   {
+   "id": "UNIym8GkNps",
+   "title": "生チョコマシュマロ食べながらコメント返信 #ローソン #チョコマシュマロ",
+   "channel": "けべ",
+   "published": "2026-08-24",
+   "views": 572308,
+   "seconds": 35,
+   "store": "lawson",
+   "category": "snack",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "chocolate",
+    "marshmallow"
+   ]
+  },
+  {
+   "id": "qaAe7UjONsk",
+   "title": "SNSでバズってたけど一部のスーパーでしか販売してなかった幻の生チョコがコンビニから新発売したので早速食べてみた！10月27日コンビニ新発売 明治生チョコ仕立てスイーツ #セブンイレブン #生チョコ",
+   "channel": "飯テロチャンネル",
+   "published": "2026-10-27",
+   "views": 565674,
+   "seconds": 24,
+   "store": "seven",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "chocolate",
+    "controversy"
+   ]
+  },
+  {
    "id": "EV6ERM9lJzQ",
    "title": "ローソン『激辛からあげクン』100個15分タイムアタックに挑戦！！ #ぞうさんパクパク #大食い #早食い #チャレンジ",
    "channel": "ぞうさんパクパク 一人でできるもん",
    "published": "2026-08-27",
-   "views": 565228,
+   "views": 565337,
    "seconds": 160,
    "store": "lawson",
    "category": "hotsnack",
@@ -983,7 +1014,7 @@
    "title": "onigiri bongo + japanese convenience store collab!",
    "channel": "cindythi",
    "published": "2026-09-13",
-   "views": 562391,
+   "views": 562612,
    "seconds": 19,
    "store": "all",
    "category": "mixed",
@@ -995,42 +1026,24 @@
    ]
   },
   {
-   "id": "qaAe7UjONsk",
-   "title": "SNSでバズってたけど一部のスーパーでしか販売してなかった幻の生チョコがコンビニから新発売したので早速食べてみた！10月27日コンビニ新発売 明治生チョコ仕立てスイーツ #セブンイレブン #生チョコ",
-   "channel": "飯テロチャンネル",
-   "published": "2026-10-27",
-   "views": 556166,
-   "seconds": 24,
-   "store": "seven",
-   "category": "mixed",
-   "group": "food",
-   "lang": "ja",
-   "tags": [
-    "chocolate",
-    "controversy"
-   ]
-  },
-  {
-   "id": "lyGPu-56n0w",
-   "title": "convenience store worker chooses my noodles! japanese convenience store",
-   "channel": "cindythi",
-   "published": "2026-09-05",
-   "views": 544010,
-   "seconds": 19,
+   "id": "UKX-gmy0RvA",
+   "title": "Tienda de conveniencia en Japón 🇯🇵 #comida #japon #tokyo #japan",
+   "channel": "JC NANOO",
+   "published": "2026-11-09",
+   "views": 556085,
+   "seconds": 89,
    "store": "all",
    "category": "mixed",
    "group": "food",
-   "lang": "en",
-   "tags": [
-    "noodles"
-   ]
+   "lang": "es",
+   "tags": []
   },
   {
    "id": "wUTrNiFKNDs",
    "title": "セブンイレブンにラーメンマシーンがある！　＃新商品",
    "channel": "ごうけつチャンネル",
    "published": "2026-09-06",
-   "views": 543280,
+   "views": 545909,
    "seconds": 84,
    "store": "seven",
    "category": "rice",
@@ -1042,11 +1055,26 @@
    ]
   },
   {
+   "id": "lyGPu-56n0w",
+   "title": "convenience store worker chooses my noodles! japanese convenience store",
+   "channel": "cindythi",
+   "published": "2026-09-05",
+   "views": 544294,
+   "seconds": 19,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "noodles"
+   ]
+  },
+  {
    "id": "ScE2SP6ivHY",
    "title": "実家でアイス4つ食べちゃった日🍨💭#新潟 #帰省 #実家 #アイスクリーム #コンビニ #新作 #爆食い #スイーツ #セブンイレブン #ローソン #夏休み #ol #一人暮らし",
    "channel": "かわいいすし♡ | ときめくものに囲まれたい",
    "published": "2026-08-19",
-   "views": 524256,
+   "views": 524677,
    "seconds": 32,
    "store": "all",
    "category": "sweets",
@@ -1062,7 +1090,7 @@
    "title": "セブンイレブン新発売冷やし家系ラーメン #ラーメン #グルメ #食事",
    "channel": "オーガ・グルメの鬼",
    "published": "2026-08-26",
-   "views": 520680,
+   "views": 520764,
    "seconds": 61,
    "store": "seven",
    "category": "rice",
@@ -1078,7 +1106,7 @@
    "title": "ローソン一点突破すぎ！全種類食べ比べ #モッパン #飯テロ #ローソン #mukbang",
    "channel": "ryoma ASMR",
    "published": "2026-09-30",
-   "views": 503363,
+   "views": 507427,
    "seconds": 139,
    "store": "lawson",
    "category": "bread",
@@ -1093,7 +1121,7 @@
    "title": "とんでもないアイスきたぞ！セブン、ローソン、ファミマの今週の話題の新作アイス美味しかったランキング！！！",
    "channel": "ハットリは回転寿司厨",
    "published": "2026-10-02",
-   "views": 492662,
+   "views": 492726,
    "seconds": 134,
    "store": "all",
    "category": "sweets",
@@ -1105,27 +1133,11 @@
    ]
   },
   {
-   "id": "hk3ilnYoX0M",
-   "title": "일본에서 '난리났다는' 가난한 편의점 도시락?ㅋㅋㅋ",
-   "channel": "평양냉면",
-   "published": "2026-09-20",
-   "views": 474601,
-   "seconds": 29,
-   "store": "all",
-   "category": "rice",
-   "group": "food",
-   "lang": "ko",
-   "tags": [
-    "bento",
-    "controversy"
-   ]
-  },
-  {
    "id": "8SV9Qog6UPg",
    "title": "セブンイレブンとみ田監修豚ラーメンが10/21からリニューアルしたらしい。 #ラーメン #ラーメン食べたい #グルメ",
    "channel": "らぁ麺が好きすぎる人🍜(ゆーき)",
    "published": "2026-10-21",
-   "views": 472744,
+   "views": 475740,
    "seconds": 69,
    "store": "seven",
    "category": "rice",
@@ -1138,11 +1150,42 @@
    ]
   },
   {
+   "id": "hk3ilnYoX0M",
+   "title": "일본에서 '난리났다는' 가난한 편의점 도시락?ㅋㅋㅋ",
+   "channel": "평양냉면",
+   "published": "2026-09-20",
+   "views": 474653,
+   "seconds": 29,
+   "store": "all",
+   "category": "rice",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "bento",
+    "controversy"
+   ]
+  },
+  {
+   "id": "ZZSIhhtFf3o",
+   "title": "「見つけよう！新発見」 セブン−イレブンの新商品食べてみたら美味しすぎた🥰#セブンイレブン ＃見つけよう新発見  #食育プロジェクト",
+   "channel": "セブン‐イレブン・ジャパン 公式チャンネル",
+   "published": "2026-11-12",
+   "views": 472242,
+   "seconds": 86,
+   "store": "seven",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "review"
+   ]
+  },
+  {
    "id": "rHU1-ahIHII",
    "title": "Day 188 of ONLY Eating Food From a Japanese Convenience Store!",
    "channel": "Koreanosh",
    "published": "2026-08-20",
-   "views": 465328,
+   "views": 465907,
    "seconds": 73,
    "store": "all",
    "category": "mixed",
@@ -1157,7 +1200,7 @@
    "title": "脳みそバグりすぎて溶ける…#ファミリーマート #ハーゲンダッツ #新作 #アイスクリーム #コンビニ #vlog #会社員 #深夜 #一人暮らし #おすすめ #スイーツ",
    "channel": "かわいいすし♡ | ときめくものに囲まれたい",
    "published": "2026-10-09",
-   "views": 455396,
+   "views": 457144,
    "seconds": 11,
    "store": "familymart",
    "category": "sweets",
@@ -1169,24 +1212,11 @@
    ]
   },
   {
-   "id": "UKX-gmy0RvA",
-   "title": "Tienda de conveniencia en Japón 🇯🇵 #comida #japon #tokyo #japan",
-   "channel": "JC NANOO",
-   "published": "2026-11-09",
-   "views": 446112,
-   "seconds": 89,
-   "store": "all",
-   "category": "mixed",
-   "group": "food",
-   "lang": "es",
-   "tags": []
-  },
-  {
    "id": "Xcr99Rg52Nk",
    "title": "ファミマ先行発売！ブルダック新作のスワイシーをアレンジしながら食べ比べ🔥🌶️#ブルダック #新発売 #buldak #ASMR #Mukbang",
    "channel": "チートレニーじゅん。",
    "published": "2026-08-19",
-   "views": 438773,
+   "views": 439452,
    "seconds": 71,
    "store": "familymart",
    "category": "mixed",
@@ -1198,11 +1228,26 @@
    ]
   },
   {
+   "id": "fxuIdpGh05o",
+   "title": "편의점 도시락으로 주작한 부장님의 의외의 반전??",
+   "channel": "돌핀",
+   "published": "2026-11-03",
+   "views": 437295,
+   "seconds": 35,
+   "store": "all",
+   "category": "rice",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "bento"
+   ]
+  },
+  {
    "id": "lc50HE0wC4w",
    "title": "ローソンの一点突破すぎ弁当作ってみた♪",
    "channel": "キラワレ家族",
    "published": "2026-09-25",
-   "views": 434339,
+   "views": 434562,
    "seconds": 75,
    "store": "lawson",
    "category": "rice",
@@ -1214,26 +1259,11 @@
    ]
   },
   {
-   "id": "fxuIdpGh05o",
-   "title": "편의점 도시락으로 주작한 부장님의 의외의 반전??",
-   "channel": "돌핀",
-   "published": "2026-11-03",
-   "views": 426058,
-   "seconds": 35,
-   "store": "all",
-   "category": "rice",
-   "group": "food",
-   "lang": "ko",
-   "tags": [
-    "bento"
-   ]
-  },
-  {
    "id": "4FWglgOKY58",
    "title": "진짜 맛있다는 일본 편의점 조합 먹어보기",
    "channel": "융감하게 bravelyyoon",
    "published": "2026-10-16",
-   "views": 421090,
+   "views": 424096,
    "seconds": 37,
    "store": "all",
    "category": "mixed",
@@ -1248,7 +1278,7 @@
    "title": "ローソン炎上してる「一点突破すぎ！」第1弾をすべて食べたけど正直…",
    "channel": "ハットリは回転寿司厨",
    "published": "2026-09-25",
-   "views": 400862,
+   "views": 400885,
    "seconds": 120,
    "store": "lawson",
    "category": "mixed",
@@ -1263,7 +1293,7 @@
    "title": "ローソンのお弁当が美味すぎた🤣🤣 #shorts",
    "channel": "カモミールチャンネル",
    "published": "2026-10-03",
-   "views": 393988,
+   "views": 394159,
    "seconds": 100,
    "store": "lawson",
    "category": "rice",
@@ -1274,26 +1304,11 @@
    ]
   },
   {
-   "id": "rA5wXxhXxnE",
-   "title": "ファミマの本気のチョコがけパン🍫",
-   "channel": "ryoma ASMR",
-   "published": "2026-11-02",
-   "views": 375818,
-   "seconds": 122,
-   "store": "familymart",
-   "category": "mixed",
-   "group": "food",
-   "lang": "ja",
-   "tags": [
-    "chocolate"
-   ]
-  },
-  {
    "id": "eeMfrKL0CKo",
    "title": "ローソンの一点突破すぎ弁当どう思う？",
    "channel": "こぴ",
    "published": "2026-09-22",
-   "views": 371810,
+   "views": 372019,
    "seconds": 44,
    "store": "lawson",
    "category": "rice",
@@ -1308,7 +1323,7 @@
    "title": "Trying Japan's \"Ketchup-flavored Spaghetti\" from a convenience store",
    "channel": "Japan Eat",
    "published": "2026-08-19",
-   "views": 366649,
+   "views": 366758,
    "seconds": 60,
    "store": "all",
    "category": "rice",
@@ -1324,7 +1339,7 @@
    "title": "9月15日セブンイレブン新発売カリカリ梅のメロン味を食べてみた正直な感想 #セブンイレブン #コンビニ #コンビニ新商品 #お菓子 #おやつ #カリカリ梅 #正直レビュー #メロン #梅",
    "channel": "飯テロチャンネル",
    "published": "2026-09-18",
-   "views": 337452,
+   "views": 337606,
    "seconds": 15,
    "store": "seven",
    "category": "snack",
@@ -1340,7 +1355,7 @@
    "title": "セブンイレブンから9/1発売開始した「とみ田監修冷し辛豚まぜ麺」が美味すぎた件 #ラーメン #ラーメン食べたい #グルメ",
    "channel": "らぁ麺が好きすぎる人🍜(ゆーき)",
    "published": "2026-09-02",
-   "views": 330938,
+   "views": 330994,
    "seconds": 63,
    "store": "seven",
    "category": "rice",
@@ -1357,7 +1372,7 @@
    "title": "ローソン新メニューを爆食するアラフォー男#shorts #short  #飯テロ #大食い #料理 #グルメ好き #お得グルメ#ローソン#コンビニ",
    "channel": "ハピくん",
    "published": "2026-09-24",
-   "views": 328161,
+   "views": 328655,
    "seconds": 56,
    "store": "lawson",
    "category": "mixed",
@@ -1372,7 +1387,7 @@
    "title": "Konbini sweets factionalism: Kinoko no Yama VS Takenoko no Sato",
    "channel": "Kyota Ko",
    "published": "2026-10-01",
-   "views": 317617,
+   "views": 319752,
    "seconds": 159,
    "store": "all",
    "category": "mixed",
@@ -1388,7 +1403,7 @@
    "title": "점점 '가난해지고 있는' 일본 편의점 도시락?ㅋㅋㅋ",
    "channel": "평양냉면",
    "published": "2026-10-09",
-   "views": 305955,
+   "views": 306109,
    "seconds": 25,
    "store": "all",
    "category": "rice",
@@ -1397,6 +1412,585 @@
    "tags": [
     "bento",
     "cheap"
+   ]
+  },
+  {
+   "id": "8qfKUO1UnnU",
+   "title": "日本全家炸雞口味的泡麵？",
+   "channel": "拉麵浪人 Simon",
+   "published": "2026-10-08",
+   "views": 300014,
+   "seconds": 60,
+   "store": "familymart",
+   "category": "mixed",
+   "group": "food",
+   "lang": "zh",
+   "tags": [
+    "cupnoodle",
+    "karaage"
+   ]
+  },
+  {
+   "id": "-GOTNRpcT-M",
+   "title": "【新作】プリンうめえ！今週セブンで新発売したスイーツ全6品の美味しかったランキング！！",
+   "channel": "ハットリは回転寿司厨",
+   "published": "2026-11-08",
+   "views": 204730,
+   "seconds": 127,
+   "store": "seven",
+   "category": "sweets",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "pudding",
+    "ranking"
+   ]
+  },
+  {
+   "id": "dW-nUaWj_4Y",
+   "title": "진짜 맛있다는 일본 편의점 낫또 김밥",
+   "channel": "민와와",
+   "published": "2026-11-03",
+   "views": 203850,
+   "seconds": 25,
+   "store": "all",
+   "category": "rice",
+   "group": "food",
+   "lang": "ko",
+   "tags": []
+  },
+  {
+   "id": "YWM_HCe8y4E",
+   "title": "ガリガリ君みたいな見た目なのにしっかりチーズケーキの味🍨11月3日新発売幸せを運ぶ青いチーズケーキ #ローソン # #コンビニ #コンビニ新商品 #アイス #チーズケーキ #icecreme",
+   "channel": "飯テロチャンネル",
+   "published": "2026-11-09",
+   "views": 132139,
+   "seconds": 18,
+   "store": "lawson",
+   "category": "sweets",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "icecream",
+    "cake",
+    "new"
+   ]
+  },
+  {
+   "id": "kVwotqrhqoU",
+   "title": "11月10日ファミマ新発売サクッと三角チーズケーキ美味しかったランキング🧀🍰#ファミマ #コンビニ #コンビニ新商品 #コンビニスイーツ #チーズケーキ #チーズ #ケーキ #抹茶 #チョコ",
+   "channel": "飯テロチャンネル",
+   "published": "2026-11-10",
+   "views": 112551,
+   "seconds": 22,
+   "store": "familymart",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "chocolate",
+    "cake",
+    "ranking"
+   ]
+  },
+  {
+   "id": "g854tTRR2-4",
+   "title": "ファミマのパンどろぼうのパン食べたけど…😅11月10日ファミマ新発売 木の実のパン・オ・ショコラ／メープルケーキ #ファミマ #コンビニ #コンビニ新商品 #パン #パンどろぼう #菓子パン",
+   "channel": "飯テロチャンネル",
+   "published": "2026-11-11",
+   "views": 88598,
+   "seconds": 22,
+   "store": "familymart",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "bread",
+    "cake",
+    "new"
+   ]
+  },
+  {
+   "id": "WWxlvlQPl4c",
+   "title": "Trying snacks from 7eleven in Japan…",
+   "channel": "Connor",
+   "published": "2026-10-31",
+   "views": 66239,
+   "seconds": 145,
+   "store": "seven",
+   "category": "snack",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "candy",
+    "review"
+   ]
+  },
+  {
+   "id": "A8mJ7e4cFqo",
+   "title": "ローソンへ急げ！濃厚フルーティなハイボール飲んでみた #ハイボール #カバラン #ウイスキー #shorts",
+   "channel": "【家飲み職人】せるじおのハイボールチャンネル",
+   "published": "2026-11-12",
+   "views": 31997,
+   "seconds": 118,
+   "store": "lawson",
+   "category": "drink",
+   "group": "food",
+   "lang": "ja",
+   "tags": [
+    "beer"
+   ]
+  },
+  {
+   "id": "Eb9-HyE1IeU",
+   "title": "꼭 알고 가야되는 일본편의점 추천템⁉️",
+   "channel": "리틀식탁 Little Table",
+   "published": "2026-10-30",
+   "views": 27793,
+   "seconds": 34,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ko",
+   "tags": []
+  },
+  {
+   "id": "UpAojkJfqsM",
+   "title": "only eating at convenience stores for 24 hours in japan",
+   "channel": "lil bean life",
+   "published": "2026-11-11",
+   "views": 23665,
+   "seconds": 38,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "bigeat"
+   ]
+  },
+  {
+   "id": "Nq2cZ9VLs2Y",
+   "title": "일본 편의점에서 제일 맛있는 디저트",
+   "channel": "담았지?",
+   "published": "2026-11-05",
+   "views": 13717,
+   "seconds": 38,
+   "store": "all",
+   "category": "sweets",
+   "group": "food",
+   "lang": "ko",
+   "tags": []
+  },
+  {
+   "id": "iindp-svTRo",
+   "title": "My first 7/11 smoothie 🍌🍓🫐 #711 #japan #日本",
+   "channel": "Kleine Powell",
+   "published": "2026-11-03",
+   "views": 12075,
+   "seconds": 51,
+   "store": "seven",
+   "category": "drink",
+   "group": "food",
+   "lang": "zh",
+   "tags": []
+  },
+  {
+   "id": "OXIREjaHJzQ",
+   "title": "Fav Konbini Snack in Japan 😋 #japan #japanese #7eleven #onigiri #foodie #tokyo #kyoto #shorts",
+   "channel": "Tina",
+   "published": "2026-11-04",
+   "views": 8754,
+   "seconds": 36,
+   "store": "seven",
+   "category": "mixed",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "onigiri",
+    "candy"
+   ]
+  },
+  {
+   "id": "lmoSW38cqt0",
+   "title": "7 Eleven fruit smoothie in Japan #tokyo #japan #7eleven #smoothie #mango #food #drink #7elevenjapan",
+   "channel": "CoolBro21",
+   "published": "2026-11-07",
+   "views": 8411,
+   "seconds": 38,
+   "store": "seven",
+   "category": "drink",
+   "group": "food",
+   "lang": "en",
+   "tags": []
+  },
+  {
+   "id": "PJ3gnpbbS2M",
+   "title": "BEST KONBINI COMBO! #japan #conveniencestore #Famachikichicken #Famachiki",
+   "channel": "LouLouexplores",
+   "published": "2026-11-07",
+   "views": 5652,
+   "seconds": 82,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "ranking"
+   ]
+  },
+  {
+   "id": "fi_rK94oNzg",
+   "title": "Skip the Smoothie Café in Japan, the 7-Eleven Makes It Fresh 🍓",
+   "channel": "StickInJapan",
+   "published": "2026-11-12",
+   "views": 2784,
+   "seconds": 16,
+   "store": "seven",
+   "category": "drink",
+   "group": "food",
+   "lang": "en",
+   "tags": []
+  },
+  {
+   "id": "7uMWhlGQHhQ",
+   "title": "일본에서 천만개씩 팔린다는 중화방 컵마라탕 세븐에 출시됨❤️❤️",
+   "channel": "20대 뭐 하지?",
+   "published": "2026-11-12",
+   "views": 2545,
+   "seconds": 17,
+   "store": "seven",
+   "category": "rice",
+   "group": "food",
+   "lang": "ko",
+   "tags": []
+  },
+  {
+   "id": "nYUwnZcrQ5k",
+   "title": "냄새가 이상한 일본 편의점 필수 먹템의 반전? #심사숙소 #채널S",
+   "channel": "채널S",
+   "published": "2026-11-12",
+   "views": 2425,
+   "seconds": 66,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ko",
+   "tags": []
+  },
+  {
+   "id": "jrSffrOObCM",
+   "title": "일본 편의점 추천 똑 접으면 케첩 머스타드가 한 번에",
+   "channel": "썰득템",
+   "published": "2026-11-12",
+   "views": 1980,
+   "seconds": 16,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "noodles"
+   ]
+  },
+  {
+   "id": "yFGxy7rXlN4",
+   "title": "일본 여자들이 한강 편의점에서 산 것들",
+   "channel": "세상모든이야기",
+   "published": "2026-11-11",
+   "views": 1863,
+   "seconds": 66,
+   "store": "all",
+   "category": "snack",
+   "group": "food",
+   "lang": "ko",
+   "tags": []
+  },
+  {
+   "id": "s9KLwjJuTbc",
+   "title": "꼭 먹어야한다는🏡일본편의점 초코 아이스크림! #먹방",
+   "channel": "먹은지Mukeunji",
+   "published": "2026-11-12",
+   "views": 1732,
+   "seconds": 157,
+   "store": "all",
+   "category": "sweets",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "icecream",
+    "chocolate",
+    "bigeat"
+   ]
+  },
+  {
+   "id": "AhL1ut1og0Q",
+   "title": "日本7-11生巧克力冰淇淋",
+   "channel": "瑞克美食王",
+   "published": "2026-11-11",
+   "views": 1609,
+   "seconds": 22,
+   "store": "seven",
+   "category": "mixed",
+   "group": "food",
+   "lang": "zh",
+   "tags": [
+    "icecream",
+    "chocolate"
+   ]
+  },
+  {
+   "id": "hcog3Tgm9F4",
+   "title": "일본 편의점 고수가 알려주는 라면 & 맥주 추천템 #심사숙소 #채널S",
+   "channel": "채널S",
+   "published": "2026-11-12",
+   "views": 1479,
+   "seconds": 42,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "ramen",
+    "beer"
+   ]
+  },
+  {
+   "id": "HBFo33V0X48",
+   "title": "Hawaii 7-Eleven haul! #foodie #7eleven #japan #hawaii #hawaiian",
+   "channel": "Morgan Raum",
+   "published": "2026-11-12",
+   "views": 1450,
+   "seconds": 60,
+   "store": "seven",
+   "category": "mixed",
+   "group": "food",
+   "lang": "en",
+   "tags": []
+  },
+  {
+   "id": "67sY5XRuFvM",
+   "title": "박명수가 해장하며 먹은 일본 도쿄 편의점 라면",
+   "channel": "셀럽온에어",
+   "published": "2026-11-12",
+   "views": 1432,
+   "seconds": 20,
+   "store": "all",
+   "category": "rice",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "ramen"
+   ]
+  },
+  {
+   "id": "Sr2sgusCFdE",
+   "title": "Trying Japan’s 7/11 Coffee for the First Time #japan #coffee #seveneleven",
+   "channel": "Shiri Feldman",
+   "published": "2026-11-12",
+   "views": 1383,
+   "seconds": 21,
+   "store": "seven",
+   "category": "drink",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "review"
+   ]
+  },
+  {
+   "id": "saxS8EsammM",
+   "title": "日本711必買🔥",
+   "channel": "純純 Chun",
+   "published": "2026-11-12",
+   "views": 1306,
+   "seconds": 15,
+   "store": "seven",
+   "category": "mixed",
+   "group": "food",
+   "lang": "zh",
+   "tags": []
+  },
+  {
+   "id": "znaty2y5ebk",
+   "title": "Making Drink ice cup convenience store🥤#asmr #satisfying #viral #video #trending #drink #usa #shorts",
+   "channel": "Ice Cup Drink",
+   "published": "2026-11-12",
+   "views": 1290,
+   "seconds": 23,
+   "store": "all",
+   "category": "drink",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "controversy"
+   ]
+  },
+  {
+   "id": "z6CQiD9E7Ks",
+   "title": "7-eleven snacks mukbang in japan",
+   "channel": "Ashly Schwan",
+   "published": "2026-11-12",
+   "views": 1274,
+   "seconds": 180,
+   "store": "seven",
+   "category": "snack",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "candy",
+    "bigeat"
+   ]
+  },
+  {
+   "id": "IPHS8oimO5k",
+   "title": "일본 로손에서 판매 중인 매운 아사히 맥주?",
+   "channel": "공감대...빵!",
+   "published": "2026-11-12",
+   "views": 1261,
+   "seconds": 18,
+   "store": "lawson",
+   "category": "drink",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "spicy",
+    "beer"
+   ]
+  },
+  {
+   "id": "pId1tSxC3Hk",
+   "title": "일본가면 꼭 사와야하는 간식 추천9가지! #돈키호테 #돈키호테추천템 #일본간식 #일본과자 #일본편의점",
+   "channel": "정해요",
+   "published": "2026-11-12",
+   "views": 1245,
+   "seconds": 36,
+   "store": "all",
+   "category": "snack",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "candy",
+    "noodles"
+   ]
+  },
+  {
+   "id": "VAT7mt8Z2KI",
+   "title": "Lacy's Japanese 7 Eleven Mukbang  #lacy #funnyshorts  #minivlog",
+   "channel": "Futures Academy",
+   "published": "2026-11-12",
+   "views": 1200,
+   "seconds": 19,
+   "store": "seven",
+   "category": "mixed",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "bigeat"
+   ]
+  },
+  {
+   "id": "KL3zJOilMvo",
+   "title": "Making Drink ice cup convenience store🥤#asmr #satisfying #viral #video #trending #drink #usa #shorts",
+   "channel": "Ice Cup Drink",
+   "published": "2026-11-12",
+   "views": 1187,
+   "seconds": 49,
+   "store": "all",
+   "category": "drink",
+   "group": "food",
+   "lang": "en",
+   "tags": [
+    "controversy"
+   ]
+  },
+  {
+   "id": "05Q2ULE9NYo",
+   "title": "7-ELEVEN 🇯🇵 | Eating Convenience Store Food Until I Leave Japan | Day 16",
+   "channel": "Danny Pham | PrettyMuchRetired",
+   "published": "2026-11-12",
+   "views": 1181,
+   "seconds": 34,
+   "store": "seven",
+   "category": "mixed",
+   "group": "food",
+   "lang": "en",
+   "tags": []
+  },
+  {
+   "id": "xT9IGsQdxG4",
+   "title": "일본 컵라면 21개 먹어 본 히밥이 다시 사 먹겠다는 3가지 #히밥 #일본컵라면 #돈베이 #컵누들 #일본여행 #일본편의점 #연예인추천템 #쇼핑쇼츠",
+   "channel": "하마픽",
+   "published": "2026-11-11",
+   "views": 1166,
+   "seconds": 35,
+   "store": "all",
+   "category": "rice",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "ramen",
+    "cupnoodle",
+    "review"
+   ]
+  },
+  {
+   "id": "mRk8AQpy_d8",
+   "title": "TURKISH 7/11",
+   "channel": "onittim",
+   "published": "2026-11-12",
+   "views": 1144,
+   "seconds": 28,
+   "store": "seven",
+   "category": "rice",
+   "group": "food",
+   "lang": "en",
+   "tags": []
+  },
+  {
+   "id": "_9Rn4kAv8FI",
+   "title": "🇯🇵로손 편의점🛒 인기 쫀득빵부터 돈까스 샌드위치까지! ❤️#일본일상 #일본편의점 #로손 #일본간식 #퇴사후일상",
+   "channel": "오는중",
+   "published": "2026-11-12",
+   "views": 1095,
+   "seconds": 40,
+   "store": "lawson",
+   "category": "bread",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "sandwich",
+    "bread"
+   ]
+  },
+  {
+   "id": "NOuW8epqnh4",
+   "title": "日本超商10選",
+   "channel": "菁菁有味",
+   "published": "2026-11-12",
+   "views": 1060,
+   "seconds": 36,
+   "store": "all",
+   "category": "mixed",
+   "group": "food",
+   "lang": "zh",
+   "tags": [
+    "ranking"
+   ]
+  },
+  {
+   "id": "giMGQUXAwM4",
+   "title": "수플레푸딩이랑 결혼할꺼 #일본여행 #일본편의점 #패밀리마트 #東京 #ファミマ",
+   "channel": "수즈",
+   "published": "2026-11-12",
+   "views": 1056,
+   "seconds": 75,
+   "store": "familymart",
+   "category": "sweets",
+   "group": "food",
+   "lang": "ko",
+   "tags": [
+    "pudding"
    ]
   }
  ]
