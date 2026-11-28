@@ -17,10 +17,14 @@ __HEAD__
   --tag: #E5B000; --tag-ink: #1C2127; --chip: #ECEAE2; --chip-on: #1C2127; --chip-on-ink: #FFFFFF;
   --night: #14202E;
   --body: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", "Apple SD Gothic Neo", "Noto Sans KR", "PingFang TC", "Noto Sans TC", sans-serif;
+  /* 言語の切り替えの左の i（ホーム画面に追加する方法。uniiqcode の共通部品 assets/home-guide.js）の色 */
+  --hg-btn-bg: rgba(0,0,0,.35); --hg-btn-ink: #fff; --hg-accent: var(--night); --hg-card: var(--card); --hg-ink: var(--ink);
+  --hg-sub: var(--muted); --hg-line: var(--line); --hg-field: var(--paper); --hg-on-accent: #fff;
 }
 @media (prefers-color-scheme: dark) {
   :root { --paper: #15181C; --card: #1E2228; --ink: #EEF0F2; --muted: #A3AAB3; --line: #2E333A;
-    --chip: #262B32; --chip-on: #E5B000; --chip-on-ink: #1C2127; color-scheme: dark }
+    --chip: #262B32; --chip-on: #E5B000; --chip-on-ink: #1C2127; color-scheme: dark;
+    --hg-accent: var(--tag); --hg-on-accent: var(--tag-ink) }
 }
 * { box-sizing: border-box }
 html { -webkit-text-size-adjust: 100% }
@@ -40,7 +44,7 @@ a { color: inherit }
   background: rgba(8,12,20,.35); padding: 3px 10px; border-radius: 4px }
 .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(to bottom, rgba(8,12,20,.45) 0%, rgba(8,12,20,0) 22%, rgba(8,12,20,0) 52%, rgba(8,12,20,.85) 100%) }
-.topbar { position: absolute; z-index: 2; left: 0; right: 0; top: 0; display: flex; justify-content: flex-end;
+.topbar { position: absolute; z-index: 2; left: 0; right: 0; top: 0; display: flex; justify-content: flex-end; align-items: center; gap: 8px;
   padding: calc(env(safe-area-inset-top, 0px) + 10px) max(12px, env(safe-area-inset-right, 0px)) 0 max(12px, env(safe-area-inset-left, 0px)) }
 .langs { display: flex; gap: 2px; background: rgba(0,0,0,.35); border-radius: 999px; padding: 3px }
 .langs a { color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; white-space: nowrap }
@@ -229,5 +233,8 @@ __CARDS__
   start();
 })();
 </script>
+<!-- 言語の切り替えの左の i: ホーム画面に追加する方法と URL のコピー（uniiqcode のアプリ共通の部品。uniiqcode.com 本体のリポジトリの assets/home-guide.js）。
+     案内の言葉は <html lang> で切り替わる（日本語・韓国語・繁体字・英語） -->
+<script src="https://uniiqcode.com/assets/home-guide.js" data-app="__SITE_NAME__" data-url="https://uniiqcode.com/konbini-24h/" data-target=".langs" data-where="before" defer></script>
 </body>
 </html>
